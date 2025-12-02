@@ -21,23 +21,46 @@
             font-family: Arial, sans-serif;
             display: flex;
             gap: 20px;
-            background-color: #e0f2ff;
-            margin: 20px;
+            background-color: #f9f9f9; /* 改为浅灰色背景 */
+            margin: 0;
+            padding: 20px;
+            justify-content: center; /* 居中布局 */
+        }
+
+        /* 三列布局容器 */
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1400px; /* 最大宽度限制 */
+            gap: 20px;
         }
 
         .left-column {
             width: 300px;
             text-align: center;
+            flex-shrink: 0; /* 防止左侧栏被压缩 */
+            background-color: #ffffff; /* 改为白色背景 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影 */
+        }
+
+        .main-column {
+            flex: 0 0 800px; /* A4纸宽度约800px */
+            background-color: #ffffff; /* 改为白色背景 */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影 */
+        }
+
+        .right-blank {
+            flex: 1; /* 空白区域 */
         }
 
         .left-column img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-        }
-
-        .right-column {
-            flex: 1;
         }
 
         .lang-switch {
@@ -56,29 +79,10 @@
             background-color: #45a049;
         }
 
-        .bg-yellow-200 {
-            background-color: #fef3c7;
-        }
-        
-        .p-6 {
-            padding: 1.5rem;
-        }
-        
-        .rounded-md {
-            border-radius: 0.375rem;
-        }
-        
-        .shadow-md {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .mb-8 {
-            margin-bottom: 2rem;
-        }
-        
         ul {
             list-style-type: disc;
             padding-left: 20px;
+            margin-bottom: 20px;
         }
         
         a {
@@ -89,112 +93,267 @@
         a:hover {
             text-decoration: underline;
         }
+
+        h2 {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #444;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* Links区域样式 */
+        .links-section {
+            margin-top: 30px;
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .links-section h3 {
+            font-size: 1.2em;
+            margin-top: 0;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 8px;
+            color: #333;
+        }
+        .links-section ul {
+            padding-left: 20px;
+            margin: 10px 0 0 0;
+        }
+        .links-section li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .links-section li span {
+            margin-right: 6px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-column, .main-column {
+                width: 100%;
+                max-width: 100%;
+                flex: none;
+            }
+            .right-blank {
+                display: none;
+            }
+            .lang-switch {
+                position: static;
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
-<body class="bg-yellow-200 p-6 rounded-md shadow-md mb-8">
+<body>
     <button id="langButton" class="lang-switch">中文</button>
     
-    <div class="left-column">
-        <h2 data-lang="name">Zheng Xu</h2>
-        <p data-lang="location">Anhui</p>
-        <p data-lang="email">xuzheng1@mail.ustc.edu.cn</p>
-        <p><a href="https://scholar.google.com/citations?user=7AQCyUgAAAAJ&hl=en" data-lang="scholar">Google Scholar</a></p>
-        <p><a href="index/hard.html" data-lang="hard">Isogeny Hard Problems</a></p>
-        <p><a href="index/paper3.html" data-lang="paper1">SIDH</a></p>
-        <p><a href="index/paper1.html" data-lang="paper1">CSIDH</a></p>
-        <p><a href="index/paper2.html" data-lang="paper1">SQIsign</a></p>
-        <p><a href="index/Abel簇.html" data-lang="abel">Abelian Varietiesl</a></p>
-        <p><a href="index/IsogenyClub.html" data-lang="club">Isogeny Club</a></p>
+    <div class="container">
+        <div class="left-column">
+            <h2 data-lang="name">Zheng Xu(徐铮)</h2>
+            <p data-lang="email">xuzheng1@mail.ustc.edu.cn</p>
+            <p><a href="https://scholar.google.com/citations?user=7AQCyUgAAAAJ&hl=en" data-lang="scholar">Google Scholar</a></p>
+            <p><a href="index/hard.html" data-lang="hard">Isogeny Hard Problems</a></p>
+            <p><a href="index/paper3.html" data-lang="paper1">SIDH</a></p>
+            <p><a href="index/paper1.html" data-lang="paper1">CSIDH</a></p>
+            <p><a href="index/paper2.html" data-lang="paper1">SQIsign</a></p>
+            <p><a href="index/Abel簇.html" data-lang="abel">Abelian Varieties</a></p>
+            <p><a href="index/IsogenyClub.html" data-lang="club">Isogeny Club</a></p>
+
+            <!-- 添加Links区域 -->
+            <div class="links-section">
+                <h3><p class="profile-link" data-lang="link">Links</p></h3>
+                <ul>
+                    <li>
+                        <span>📚</span> <a href="https://iacr.org/">International Association for Cryptologic Research (IACR)</a>
+                        
+                        <p> <a href="https://iacr.org/cryptodb/data/byconf.php">Publications by venue in each year (IACR) </a> </p> 
+                    </li> 
+                    <li> 
+                        <span>📝</span> <a href="https://eprint.iacr.org/">Cryptology ePrint Archive-Preprint server (eprint)</a>
+                    </li>
+                    <li>
+                        <span>📚</span> <a href="https://isogeny.club/">Isogeny Club</a> 
+                    </li> 
+                    <li>
+                        <span>📚</span> <a href="https://ellipticnews.wordpress.com/">The Elliptic Curve Cryptography blog (ellipticnews)</a>
+                    </li> 
+                    <li> 
+                        <span>📝</span> <a href="https://arxiv.org/list/math.NT/recent">arXiv: Number Theory - Preprint server (arxiv)</a>
+                    </li>
+                    <li>
+                        <span>📚</span> <a href="https://www.cacrnet.org.cn/">中国密码学会(CACR)</a>
+                    </li>
+                    <li>
+                        <span>🔬</span> <a href="https://math.ustc.edu.cn/main.htm">USTC-School of Mathematical Sciences</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <span>👥</span> 
+                        <a href="https://andreabasso.com/">Andrea Basso</a> | 
+                        <a href="https://homes.esat.kuleuven.be/~wcastryc/">Wouter Castryck</a> |
+                        <a href="https://www.esat.kuleuven.be/cosic/people/person/?u=u0171117">Mingjie Chen</a> |
+                        <a href="https://www.pierrickdartois.fr/homepage/">Pierrick Dartois</a> | 
+                        <a href="https://www.esat.kuleuven.be/cosic/people/person/?u=u0125544">Thomas Decru</a> | 
+                        <a href="https://defeo.lu/">Luca De Feo</a> | 
+                        <a href="https://borisfouotsa.com/">Boris Fouotsa</a> |  
+                        <a href="https://www.math.auckland.ac.nz/~sgal018/">Steven Galbraith</a> | 
+                        <a href="https://qi.nemzetilabor.hu/people/peter-kutas">Peter Kutas</a> | 
+                        <a href="https://tonioecto.github.io/antoninleroux/">Antonin Leroux</a> | 
+                        <a href="https://lucianomaino.github.io/Luciano-Maino.github.io/">Luciano Maino</a> | 
+                        <a href="https://www.unibw.de/crypto-en/team/marzio-mula-m-sc">Marzio Mula</a> | 
+                        <a href="https://researchmap.jp/onukihiroshi">Hiroshi Onuki</a> | 
+                        <a href="https://christophe.petit.web.ulb.be/publis.html"> Christophe Petit</a> | 
+                        <a href="https://www.math.u-bordeaux.fr/~damienrobert/pro/index.html">Damien Robert</a>| 
+                        <a href="https://www.mariascrs.com/"> Maria Corte-Real Santos </a> | 
+                        <a href="https://www.unibw.de/crypto-en/team/sebastian-alexander-spindler-m-sc">Sebastian Alexander Spindler</a> | 
+                        <a href="https://www.esat.kuleuven.be/cosic/people/person/?u=u0031924"> Frederik Vercauteren</a> | 
+                        <a href="https://bweso.com/"> Benjamin Wesolowski </a> |
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-column"> 
+   <div class="profile-header" style="display: flex; align-items: center; gap: 30px; padding-bottom: 20px; border-bottom: 2px solid #e0e0e0;">
+    <div style="flex: 1;">
+        <div class="profile-info">
+            <h1 data-lang="name">Zheng Xu (徐铮)</h1>
+            <p class="profile-title" data-lang="title">Assistant Researcher, Hefei National Laboratory </p>
+            <p class="profile-contact" data-lang="email">Email: xuzheng1@mal.ustc.edu.cn</p>
+            <p class="profile-contact" data-lang="address">Address: Hefei, China</p>
+        </div>
     </div>
-    
-    <div class="right-column"> 
-        <h2 data-lang="work-experience">Experience</h2>
-        <ul>
-            <li><p data-lang="date1">Oct 2024-Present</p>
-                <p data-lang="job1-institution">Hefei National Laboratory, University of Science and Technology of China, Quantum Computing Department</p>
-                <p data-lang="job1-position">Junior Researcher</p>
-            </li>
-            <li><p data-lang="date2">Sep 2023-Sep 2024</p>
-                <p data-lang="job2-institution">Hefei National Laboratory, University of Science and Technology of China, Quantum Computing Department</p>
-                <p data-lang="job2-position">Post-doctor, Advisor: Prof. Yi Ouyang</p>
-            </li>
-            <li><p data-lang="date3">Sep 2021-Aug 2023</p>
-                <p data-lang="job3-institution">BIMSA, Yau Mathematical Sciences Center, Tsinghua University</p>
-                <p data-lang="job3-position">Post-doctor, Advisor: Prof. Jintai Ding</p>
-            </li>
-        </ul>
-        
-        <h2 data-lang="education">Education</h2>
-        <ul>
-            <li> <p data-lang="date4">Sep 2016-Jun 2021</p> 
-                <p data-lang="edu1-institution">University of Science and Technology of China, School of Mathematical Sciences</p>
-                <p data-lang="edu1-degree">Ph.D. in Mathematics, Advisor: Prof. Yi Ouyang</p>
-            </li>
-            <li> <p data-lang="date5">Sep 2012-Jun 2016</p> 
-                <p data-lang="edu2-institution">Shandong University, School of Mathematics</p>
-                <p data-lang="edu2-degree">B.S. in Mathematics</p>
-            </li>
-        </ul>
-
-        <h2 data-lang="research">Research Interests</h2>
-        <ul>
-            <li data-lang="research1-title">Computational Number Theory</li>
-            <p data-lang="research1-content1">1. Structure of isogeny graphs, computating isogeny and endomorphism ring problems</p>
-            <p data-lang="research1-content2">2. Generalizations to abelian varieties over finite fields</p>
-            <li data-lang="research2-title">Cryptography</li>
-            <p data-lang="research2-content1">1. Isogeny-based post-quantum signatures: Design, optimization and analysis of SQIsign series signatures.
-            </p>
-            <p data-lang="research2-content2">2. Isogeny-based post-quantum key exchange: Design, optimization and analysis of module action MIKE2.</p>
-        </ul>
- 
-        <h2 data-lang="publications">Publications</h2>
-        <h3 data-lang="published">Published or Accepted Papers</h3>
-        <ul>
-            <p data-lang="pub6">Zheng Xu, Kaizhan Lin\\(^∗\\), Chang-An Zhao, Yi Ouyang, <a href= "https://eprint.iacr.org/2025/920"><em>SQIsign2D\\(^2\\): New SQIsign2D Variant by Leveraging Power Smooth Isogenies in Dimension One</em></a>, accepted for publication in Asiacrypt 2025 </p> 
-            <p data-lang="pub5">Zheng Xu, Yi Ouyang∗, Zijian Zhou, <a href= "https://www.sciencedirect.com/science/article/pii/S1071579725000097"><em>Neighborhood of two vertices in the isogeny graph of principally polarized superspecial abelian surfaces</em></a>, Finite Fields and Their Applications 103, 102579 (2025) </p>
-            <p data-lang="pub4">Kaizhan Lin, Weize Wang, Zheng Xu∗, Changan Zhao, <a href="https://ieeexplore.ieee.org/document/10586884"><em>A faster software implementation of SQISign</em></a>, IEEE Transactions on Information Theory Volume 70, Issue 9 (2024) (Corresponding Author)</p>
-            <p data-lang="pub3">Songsong Li, Yi Ouyang∗, Zheng Xu, <a href= "https://www.sciencedirect.com/science/article/pii/S1071579719301224"><em>Endomorphism rings of supersingular elliptic curves over Fp</em></a>,  Finite Fields and Their Applications 62, 101619 (2020)</p>
-            <p data-lang="pub2">Songsong Li, Yi Ouyang, Zheng Xu∗, <a href= "https://www.sciencedirect.com/science/article/pii/S1071579719301030"><em>Neighborhood of the supersingular elliptic curve isogeny graph at j= 0 and 1728</em></a>, Finite Fields and Their Applications 61, 101600 (2020) (Corresponding Author)</p>
-            <p data-lang="pub1">Yi Ouyang, Zheng Xu∗, <a href= "https://www.sciencedirect.com/science/article/pii/S1071579719300383"><em>Loops of isogeny graphs of supersingular elliptic curves at j = 0</em></a>,  Finite Fields and Their Applications 58, 174-176 (2019) (Corresponding Author)</p>
-        </ul>
-        
-        <h3 data-lang="preprint">Preprints</h3>
-        <ul>
-            
-        </ul> 
-
-        <h3 data-lang="thesis">Ph.D. Thesis</h2>
-        <ul>
-            <p data-lang="thesis1"> <a href="index/thesis.pdf">Isogeny Graph And Its Application In Cryptography </a> </p>
+    <!-- 拉宽照片容器 -->
+    <div class="profile-photo-container" style="width: 300px; height: 250px; border: 1px solid #ddd; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
+        <img class="profile-photo" src="index/zhengxu.jpg" alt="Zheng Xu" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="photo-placeholder" style="display: none; flex-direction: column; align-items: center; justify-content: center; color: #666; font-size: 14px;">
+            照片位置<br>(200×250px)
+        </div>
+    </div>
+</div>
+            <h2 data-lang="work-experience">Experience</h2>
+            <ul>
+                <li>
+                    <p data-lang="date1">Oct 2024-Present</p>
+                    <p data-lang="job1-institution">Hefei National Laboratory, University of Science and Technology of China, Quantum Computing Department</p>
+                    <p data-lang="job1-position">Assistant Researcher</p>
+                </li>
+                <li>
+                    <p data-lang="date2">Sep 2023-Sep 2024</p>
+                    <p data-lang="job2-institution">Hefei National Laboratory, University of Science and Technology of China, Quantum Computing Department</p>
+                    <p data-lang="job2-position">Post-doctor, Advisor: Prof. Yi Ouyang</p>
+                </li>
+                <li>
+                    <p data-lang="date3">Sep 2021-Aug 2023</p>
+                    <p data-lang="job3-institution">BIMSA, Yau Mathematical Sciences Center, Tsinghua University</p>
+                    <p data-lang="job3-position">Post-doctor, Advisor: Prof. Jintai Ding</p>
+                </li>
             </ul>
-        <h2 data-lang="projects">Lead Projects</h2>
-        <ul>
-            <li>
-                <p data-lang="project1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography 'Project Title: The Mathematical Theory of Isogeny-Based Post Quantum Cryptography (NSFC)'</p>
-                <p data-lang="project1-time">Project Duration: 2025 - 2028</p>
-            </li>
-        </ul>
-        <h2 data-lang="projectss">Research Projects</h2>
-        <ul>
-            <li>
-                <p data-lang="projects1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography (Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province)</p>
-                <p data-lang="projects1-time">Project Duration: 2018 - 2022</p>
-            </li>
-            <li>
-                <p data-lang="projects2-name">Project Title: Theoretical and Applied Research on Quantum Algorithms and Post-Quantum Cryptographic Algorithms (Major Project on Quantum Communication and Quantum Computers)</p>
-                <p data-lang="projects2-time">Project Duration: 2021 - 2026</p>
-            </li>
-        </ul>
+            
+            <h2 data-lang="education">Education</h2>
+            <ul>
+                <li>
+                    <p data-lang="date4">Sep 2016-Jun 2021</p> 
+                    <p data-lang="edu1-institution">University of Science and Technology of China, School of Mathematical Sciences</p>
+                    <p data-lang="edu1-degree">Ph.D. in Mathematics, Advisor: Prof. Yi Ouyang</p>
+                </li>
+                <li>
+                    <p data-lang="date5">Sep 2012-Jun 2016</p> 
+                    <p data-lang="edu2-institution">Shandong University, School of Mathematics</p>
+                    <p data-lang="edu2-degree">B.S. in Mathematics</p>
+                </li>
+            </ul>
+
+            <h2 data-lang="research">Research Interests</h2>
+            <ul>
+                <li data-lang="research1-title">Computational Number Theory</li>
+                <p data-lang="research1-content1">1. Structure of isogeny graphs, computating isogeny and endomorphism ring problems</p>
+                <p data-lang="research1-content2">2. Generalizations to abelian varieties over finite fields</p>
+                <li data-lang="research2-title">Cryptography</li>
+                <p data-lang="research2-content1">1. Isogeny-based post-quantum signatures: Design, optimization and analysis of SQIsign series signatures.</p>
+                <p data-lang="research2-content2">2. Isogeny-based post-quantum key exchange: Design, optimization and analysis of module action MIKE2.</p>
+            </ul>
+     
+            <h2 data-lang="publications">Publications</h2>
+            <h3 data-lang="published">Published or Accepted Papers</h3>
+            <ul>
+                <li>
+                    <p data-lang="pub6">Zheng Xu, Kaizhan Lin\\(^∗\\), Chang-An Zhao, Yi Ouyang, <a href="https://eprint.iacr.org/2025/920"><em>SQIsign2D\\(^2\\): New SQIsign2D Variant by Leveraging Power Smooth Isogenies in Dimension One</em></a>, accepted for publication in Asiacrypt 2025 </p>
+                </li>
+                <li>
+                    <p data-lang="pub5">Zheng Xu, Yi Ouyang∗, Zijian Zhou, <a href="https://www.sciencedirect.com/science/article/pii/S1071579725000097"><em>Neighborhood of two vertices in the isogeny graph of principally polarized superspecial abelian surfaces</em></a>, Finite Fields and Their Applications 103, 102579 (2025) </p>
+                </li>
+                <li>
+                    <p data-lang="pub4">Kaizhan Lin, Weize Wang, Zheng Xu∗, Changan Zhao, <a href="https://ieeexplore.ieee.org/document/10586884"><em>A faster software implementation of SQISign</em></a>, IEEE Transactions on Information Theory Volume 70, Issue 9 (2024) (Corresponding Author)</p>
+                </li>
+                <li>
+                    <p data-lang="pub3">Songsong Li, Yi Ouyang∗, Zheng Xu, <a href="https://www.sciencedirect.com/science/article/pii/S1071579719301224"><em>Endomorphism rings of supersingular elliptic curves over \\(\\mathbb{F}_p\\)</em></a>,  Finite Fields and Their Applications 62, 101619 (2020)</p>
+                </li>
+                <li>
+                    <p data-lang="pub2">Songsong Li, Yi Ouyang, Zheng Xu∗, <a href="https://www.sciencedirect.com/science/article/pii/S1071579719301030"><em>Neighborhood of the supersingular elliptic curve isogeny graph at j= 0 and 1728</em></a>, Finite Fields and Their Applications 61, 101600 (2020) (Corresponding Author)</p>
+                </li>
+                <li>
+                    <p data-lang="pub1">Yi Ouyang, Zheng Xu∗, <a href="https://www.sciencedirect.com/science/article/pii/S1071579719300383"><em>Loops of isogeny graphs of supersingular elliptic curves at j = 0</em></a>,  Finite Fields and Their Applications 58, 174-176 (2019) (Corresponding Author)</p>
+                </li>
+            </ul>
+            
+            <h3 data-lang="preprint">Preprints</h3>
+            <ul></ul> 
+
+            <h3 data-lang="thesis">Ph.D. Thesis</h3>
+            <ul>
+                <li>
+                    <p data-lang="thesis1"> <a href="index/thesis.pdf">Isogeny Graph And Its Application In Cryptography </a> </p>
+                </li>
+            </ul>
+            
+            <h2 data-lang="projects">Lead Projects</h2>
+            <ul>
+                <li>
+                    <p data-lang="project1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography 'Project Title: The Mathematical Theory of Isogeny-Based Post Quantum Cryptography (NSFC)'</p>
+                    <p data-lang="project1-time">Project Duration: 2025 - 2028</p>
+                </li>
+            </ul>
+            
+            <h2 data-lang="projectss">Research Projects</h2>
+            <ul>
+                <li>
+                    <p data-lang="projects1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography (Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province)</p>
+                    <p data-lang="projects1-time">Project Duration: 2018 - 2022</p>
+                </li>
+                <li>
+                    <p data-lang="projects2-name">Project Title: Theoretical and Applied Research on Quantum Algorithms and Post-Quantum Cryptographic Algorithms (Major Project on Quantum Communication and Quantum Computers)</p>
+                    <p data-lang="projects2-time">Project Duration: 2021 - 2026</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="right-blank">
+            <!-- 空白区域 -->
+        </div>
     </div>
 
     <script>
         // 语言数据对象
         const translations = {
             'en': {
-                'name': 'Zheng Xu',
+                'name': 'Zheng Xu (徐铮)',
                 'location': 'Anhui, China',
                 'email': 'xuzheng1@mail.ustc.edu.cn',
                 'github': 'Github',
+                'title':'Hefei National Laboratory, University of Science and Technology of China',
+                'address':'China-Anhui-Hefei', 
                 'scholar': 'Google Scholar',
                 'hard': 'Isogeny Hard Problems',
                 'paper': 'Isogeny-Based Cryptography',
@@ -203,7 +362,7 @@
                 'work-experience': 'Experience',
                 'date1':'Oct 2024-Present', 
                 'job1-institution': 'Hefei National Laboratory, University of Science and Technology of China, Quantum Computing Department',
-                'job1-position': 'Junior Researcher',
+                'job1-position': 'Assistant Researcher',
                 'date2':'Sep 2023-Sep 2024',  
                 'job2-institution': 'Hefei National Laboratory, University of Science and Technology of China, Quantum Computing  Department',
                 'job2-position': 'Post-doctor, Advisor: Prof. Yi Ouyang',
@@ -246,9 +405,12 @@
             },
             'zh-CN': {
                 'name': '徐铮',
+                'title':'合肥国家实验室, 中国科学技术大学',
+                'address':'中国-安徽-合肥-高新区',
                 'location': '安徽',
                 'email': 'xuzheng1@mail.ustc.edu.cn',
                 'github': 'Github',
+                'link':'链接',
                 'scholar': '谷歌学术',
                 'hard': '同源困难问题',
                 'paper': '同源密码发展',
@@ -300,56 +462,44 @@
             }
         };
          
-     document.addEventListener('DOMContentLoaded', function() {
-    const langButton = document.getElementById('langButton'); // 正确获取按钮元素
-    let currentLang = 'en'; // 默认显示英文
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButton = document.getElementById('langButton');
+            let currentLang = 'en';
 
-    // 初始应用英文翻译
-    applyTranslation('en');
+            applyTranslation('en');
 
-    langButton.addEventListener('click', function() {
-        // 切换语言
-        currentLang = currentLang === 'en' ? 'zh-CN' : 'en';
+            langButton.addEventListener('click', function() {
+                currentLang = currentLang === 'en' ? 'zh-CN' : 'en';
+                langButton.textContent = currentLang === 'en' ? '中文' : 'English';
+                applyTranslation(currentLang);
+                document.documentElement.lang = currentLang;
+            });
 
-        // 更新按钮文本（直接使用langButton）
-        langButton.textContent = currentLang === 'en' ? '中文' : 'English';
+            function applyTranslation(lang) {
+                const elements = document.querySelectorAll('[data-lang]');
+                
+                elements.forEach(element => {
+                    element.style.transition = 'opacity 0.3s, transform 0.3s';
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(10px)';
+                });
 
-        // 应用翻译
-        applyTranslation(currentLang);
+                setTimeout(() => {
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-lang');
+                        if (translations[lang] && translations[lang][key]) {
+                            element.innerHTML = translations[lang][key];
+                        }
+                        MathJax.typesetPromise([element]).catch(err => console.error('MathJax error:', err));
+                    });
 
-        // 更新HTML语言属性
-        document.documentElement.lang = currentLang;
-    });
-
-    function applyTranslation(lang) {
-        const elements = document.querySelectorAll('[data-lang]');
-        
-        // 可选：添加淡入淡出动画（如果需要）
-        elements.forEach(element => {
-            element.style.transition = 'opacity 0.3s, transform 0.3s';
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(10px)';
+                    elements.forEach(element => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    });
+                }, 300);
+            }
         });
-
-        setTimeout(() => {
-            elements.forEach(element => {
-                const key = element.getAttribute('data-lang');
-                if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
-                }
-                // 重新渲染MathJax公式
-                MathJax.typesetPromise([element]).catch(err => console.error('MathJax error:', err));
-            });
-
-            // 恢复元素显示
-            elements.forEach(element => {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            });
-        }, 300);
-    }
-});
     </script>
 </body>
-
 </html>
