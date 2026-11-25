@@ -41,12 +41,12 @@
     --crop: 50%;
     --footer-crop: 60%;
 }
-:root[data-landscape="moon"] {
-    --canvas: #f6f8fc;
-    --heading: #334966;
-    --link: #264c7b;
-    --landscape: url("../images/sidh-moonsea.jpg");
-    --shade: linear-gradient(90deg, #101c355e, transparent 65%, #101c354a);
+:root[data-landscape="dunes"] {
+    --canvas: #fcf8f4;
+    --heading: #794327;
+    --link: #83461f;
+    --landscape: url("../images/sidh-dunes.jpg");
+    --shade: linear-gradient(90deg, #331b16b8, #51291917 65%, #291810ad);
     --crop: 50%;
     --footer-crop: 70%;
 }
