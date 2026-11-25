@@ -4,37 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>同源密码讨论</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        /* 使用 flexbox 布局实现左右分栏 */
-       .main-content {
-            display: flex;
-            gap: 20px;
-        }
-       .left-column,
-       .right-column {
-            flex: 1;
-            /* 根据需要调整基础宽度，这里保持原来的比例 */
-            flex-basis: 30%; 
-        }
-       .right-column {
-            flex-basis: 70%;
-        }
-        .left-column img {
-            width: 1900%;
-            height: auto;
-            display: block; /* 使图片成为块级元素，避免行内元素的一些默认样式影响 */
-        }
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
 
-       .right-column img {
-            width: 70%;
-            height: auto;
-            display: block; /* 使图片成为块级元素，避免行内元素的一些默认样式影响 */
-        }
-    </style> 
+    <link rel="stylesheet" href="css/topics.css">
 </head>
 
 <body class="bg-yellow-200 p-6 rounded-md shadow-md mb-8">
@@ -74,6 +48,13 @@
             <section class="bg-blue-100 p-6 rounded-md shadow-md mb-8">
                 <h2 class="text-xl font-bold mb-4">讨论论文</h2>
                 <p><a  class="text-blue-600 hover:underline">固定腾讯会议: 7075135600 </a></p>
+                <h3 style="margin: 1.4rem 0 .5rem">第二期</h3>
+                <p><strong>第一次</strong></p>
+                <p><time datetime="2026-11-19">2026 年 11 月 19 日</time>、<time datetime="2026-11-26">11 月 26 日</time></p>
+                <p>主讲人　徐铮</p>
+                <p><a href="mike-2026.pdf" lang="en">MIKE: a fast and compact post-quantum NIKE</a></p>
+
+                <h3 style="margin: 1.4rem 0 .5rem">第一期</h3>
                 <ul class="list-disc list-inside">
                     <p>第一次</p> <p> <a  class="text-blue-600 hover:underline">时间: 2025-06-13 10:00; 2025-06-27 9:30; 2025-07-04 9:30; </a> </p> 
                     <p>The Module Action for Isogeny Based Cryptography </p>

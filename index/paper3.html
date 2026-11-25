@@ -1,78 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-landscape="lake">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>SIDH</title>
-    
-    <!-- Tailwind 配置 -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#36CFC9',
-                        accent: '#722ED1',
-                        dark: '#1D2129',
-                        light: '#F2F3F5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-balance {
-                text-wrap: balance;
-            }
-            .transition-lang {
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-            .card-hover {
-                transition: all 0.3s ease;
-            }
-            .card-hover:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-        }
-    </style>
+
+    <link rel="stylesheet" href="css/academic.css">
 </head>
 
 <body class="bg-light font-sans text-dark">
-    <!-- 语言切换按钮 -->
-    <button id="langButton" class="fixed top-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center">
+<header class="masthead topic-masthead" id="top">
+    <h1 data-lang="title">SIDH (Supersingular Isogeny Diffie-Hellman)</h1>
+    <a class="signature" href="../index.html#top">Zheng Xu（徐铮）</a>
+    <nav aria-label="Main navigation">
+        <a href="../index.html#top"><span class="en-label">Home</span><span class="zh-label">首页</span></a>
+        <a href="../index.html#publications"><span class="en-label">Publications</span><span class="zh-label">论文</span></a>
+        <a href="../index.html#topics"><span class="en-label">Topics</span><span class="zh-label">专题</span></a>
+        <a href="../index.html#resources"><span class="en-label">Links</span><span class="zh-label">链接</span></a>
+        <button id="langButton" class="fixed top-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center">
         <i class="fa fa-language mr-2"></i>
         <span id="langText">中文</span>
     </button>
-
-    <header class="bg-gradient-to-r from-primary to-accent text-white text-center py-12 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://picsum.photos/id/180/1200/400')] bg-cover bg-center"></div>
-        </div>
-        <div class="container mx-auto relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 transition-lang" data-lang="title">SIDH(Supersingular Isogeny Diffie-Hellman)</h1>
-           
-        </div>
-    </header>
+    </nav>
+</header>
+    <!-- 语言切换按钮 -->
     
-    <main class="container mx-auto p-6 md:p-10">
+
+    
+    <main class="topic-body">
         <!-- 概述部分 -->
         <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
-            <h2 class="text-3xl font-bold text-primary mb-6 transition-lang" data-lang="intro-title">SIDH(Supersingular Isogeny Diffie-Hellman)</h2>
             <p class="text-gray-700 leading-relaxed text-balance transition-lang" data-lang="intro-content">
        SIDH is the first post-quantum cryptographic protocol proposed based on isogeny.
             </p> 
@@ -143,10 +104,8 @@
                     </p>
                 </li> 
                 <li class="mb-2 transition-lang" data-lang="isogeny-attack6-item">
-                    <strong class="text-xl text-accent">Analysis of General SIDH (2023)</strong>
-                    <p>:  Luciano Maino, Chloe Martindale, Lorenz Panny, Giacomo Pope, and Benjamin Wesolowski analyzed general SIDH instances and developed some attacks, though none are polynomial-time.
-
-</p>
+                    <strong class="text-xl text-accent">SIDH Key Recovery for Arbitrary Starting Curves (2023, EUROCRYPT)</strong>
+                    <p>Luciano Maino, Chloe Martindale, Lorenz Panny, Giacomo Pope and Benjamin Wesolowski gave a subexponential-time key recovery attack on SIDH for arbitrary starting curves. If the endomorphism ring of the starting curve is known, the authors also give a conditional polynomial-time bound for key recovery.</p>
                     <p class="mt-2">
                         <a href="BreakingI.pdf" class="text-primary hover:underline inline-flex items-center">
                             <i class="fa fa-file-pdf-o mr-2"></i>
@@ -222,7 +181,7 @@
                     </p>
                 </li> 
          <li class="mb-2 transition-lang" data-lang="endomorphism-attack4-item">        
-    <strong class="text-xl text-accent">Attacks on MSIDH and FESTA (2023, Asiacrypt)</strong>
+    <strong class="text-xl text-accent">Attacks on MSIDH and FESTA (2023, ASIACRYPT)</strong>
     <p>Wouter Castryck and Frederik Vercauteren proposed attacks on MSIDH and FESTA. The attack affects MSIDH with initial curves defined over \(\mathbb{F}_p\), but has no impact on other cases. It does not affect almost all instances of FESTA.</p>
     <p class="mt-2">
       <a href="breakmsidh.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -238,9 +197,29 @@
             </ol> 
         </section>
         
+        <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
+            <h2 class="text-3xl font-bold text-primary mb-6 transition-lang" data-lang="pke-title">Isogeny-Based Public-Key Encryption with Auxiliary Points</h2>
+            <ol class="list-decimal list-inside text-gray-700 leading-relaxed space-y-6">
+                <li class="mb-2 transition-lang" data-lang="pke-poke">
+                    <strong class="text-xl text-accent">POKÉ (2025, EUROCRYPT)</strong>
+                    <p>Andrea Basso and Luciano Maino proposed POKÉ, a public-key encryption scheme based on higher-dimensional isogenies.</p>
+                    <p class="mt-2"><a href="poke.pdf">POKÉ: A Compact and Efficient PKE from Higher-Dimensional Isogenies</a></p>
+                </li>
+                <li class="mb-2 transition-lang" data-lang="pke-lit">
+                    <strong class="text-xl text-accent">LIT-SiGamal (2025, ASIACRYPT)</strong>
+                    <p>Tomoki Moriya and Miha Stopar adapted SiGamal’s public-key encryption construction to a LIT diagram to obtain LIT-SiGamal.</p>
+                    <p class="mt-2"><a href="978-981-95-5113-2_9.pdf">LIT-SiGamal: An Efficient Isogeny-Based PKE Based on a LIT Diagram</a></p>
+                </li>
+                <li class="mb-2 transition-lang" data-lang="pke-weak">
+                    <strong class="text-xl text-accent">Weak Keys in POKÉ (2026, ASIACRYPT)</strong>
+                    <p>Tomoki Moriya studied how weak keys affect the two variants of POKÉ. Such keys are rare in POKÉ-2D but have a greater impact on POKÉ-4D. With the revised parameters, POKÉ-4D has parameter sizes close to those of POKÉ-2D, reducing its original efficiency advantage.</p>
+                    <p class="mt-2"><a href="poke-weak-keys.pdf">On Weak Keys of POKÉ</a></p>
+                </li>
+            </ol>
+        </section>
     </main>
     
-    <footer class="bg-dark text-white py-12">
+    <footer class="shoreline">
         <div class="container mx-auto px-6 md:px-10">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
@@ -331,11 +310,8 @@
                     </p>
                 `,
                 'isogeny-attack6-item': `
-                    <strong class="text-xl text-accent">分析一般情形下的SIDH（2023年, 欧密）</strong>
-                    <p> Luciano Maino、Chloe Martindale、Lorenz Panny、Giacomo Pope 和 Benjamin Wesolowski对一般情形下的SIDH进行分析, 得到了一些攻击但都不是多项式时间的.
-
-
-</p>
+                    <strong class="text-xl text-accent">任意起始曲线上的 SIDH 密钥恢复攻击（2023，欧密）</strong>
+                    <p>Luciano Maino、Chloe Martindale、Lorenz Panny、Giacomo Pope 和 Benjamin Wesolowski 给出了针对任意起始曲线的亚指数时间 SIDH 密钥恢复攻击。若已知起始曲线的自同态环，作者还给出了密钥恢复的条件性多项式时间界。</p>
                     <p class="mt-2">
                         <a href="BreakingI.pdf" class="text-primary hover:underline inline-flex items-center">
                             <i class="fa fa-file-pdf-o mr-2"></i>
@@ -422,6 +398,16 @@
 
                 'footer-title': 'SIDH (Supersingular Isogeny Diffie-Hellman)',
                 'footer-desc': '本页面介绍了超奇异椭圆曲线同源在密码学中设计:SIDH，旨在为相关领域的研究人员提供参考。',
+                'pke-title': '利用辅助点的同源公钥加密方案',
+                'pke-poke': `<strong class="text-xl text-accent">POKÉ 加密（2025，欧密）</strong>
+                    <p>Andrea Basso 和 Luciano Maino 提出了基于高维同源的公钥加密方案 POKÉ。</p>
+                    <p class="mt-2"><a href="poke.pdf">POKÉ: A Compact and Efficient PKE from Higher-Dimensional Isogenies</a></p>`,
+                'pke-lit': `<strong class="text-xl text-accent">LIT-SiGamal 加密（2025，亚密）</strong>
+                    <p>Tomoki Moriya 和 Miha Stopar 将 SiGamal 的公钥加密构造移到 LIT 交换图上构造加密。</p>
+                    <p class="mt-2"><a href="978-981-95-5113-2_9.pdf">LIT-SiGamal: An Efficient Isogeny-Based PKE Based on a LIT Diagram</a></p>`,
+                'pke-weak': `<strong class="text-xl text-accent">POKÉ 的弱密钥（2026，亚密）</strong>
+                    <p>Tomoki Moriya 分析了弱密钥对 POKÉ 两个版本的影响。在 POKÉ-2D 中，这类密钥出现的概率很低；在 POKÉ-4D 中，影响更为显著。调整后的四维方案参数规模接近二维方案，削弱了四维方案原有的效率优势。</p>
+                    <p class="mt-2"><a href="poke-weak-keys.pdf">On Weak Keys of POKÉ</a></p>`,
                 'copyright': '版权所有 &copy; 2025 SIDH介绍'
             }, 
             'en': {
@@ -442,7 +428,7 @@
   `,
 
   'isogeny-attack2-item': `
-    <strong class="text-xl text-accent">Active Attacks on SIDH (2016, Asiacrypt)</strong>
+    <strong class="text-xl text-accent">Active Attacks on SIDH (2016, ASIACRYPT)</strong>
     <p>Steven D. Galbraith, Christophe Petit, Barak Shani and Yan Bo Ti first proposed active attacks against SIDH.</p>
     <p class="mt-2">
       <a href="GPST.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -453,7 +439,7 @@
   `,
 
   'isogeny-attack3-item': `
-    <strong class="text-xl text-accent">Passive Attacks on SIDH (2017, Asiacrypt; 2021, Crypto)</strong>
+    <strong class="text-xl text-accent">Passive Attacks on SIDH (2017, ASIACRYPT; 2021, CRYPTO)</strong>
     <p>Christophe Petit proposed the Torsion Point Attack, which was later improved by Victoria de Quehen, Peter Kutas, Chris Leonardi, Chloe Martindale, Lorenz Panny, Christophe Petit and Katherine E. Stange. However, these attacks require a significant parameter asymmetry between the communicating parties. These attacks transform the computing isogenies problem into solving Diophantine equations in quaternion algebras.</p>
     <p class="mt-2">
       <a href="TorsionPointAttack.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -468,7 +454,7 @@
   `,
 
   'isogeny-attack4-item': `
-    <strong class="text-xl text-accent">Passive Attacks by Solving the HSP Problem (2021, Eurocrypt)</strong>
+    <strong class="text-xl text-accent">Passive Attacks by Solving the HSP Problem (2021, EUROCRYPT)</strong>
     <p>Peter Kutas, Simon-Philipp Merz, Christophe Petit and Charlotte Weitkamper proposed a new attack leveraging the ability of quantum computers to solve the Hidden Shift Problem. However, this attack did not break SIDH completely.</p>
     <p class="mt-2">
       <a href="OneWay.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -479,7 +465,7 @@
   `,
 
   'isogeny-attack5-item': `
-    <strong class="text-xl text-accent">Breaking SIDH with Special Initial Curves (2023, Eurocrypt)</strong>
+    <strong class="text-xl text-accent">Breaking SIDH with Special Initial Curves (2023, EUROCRYPT)</strong>
     <p>Wouter Castryck and Thomas Decru broke SIDH instances with special initial curves (j-invariant 1728) using Kani's lemma for higher-dimensional abelian varieties.</p>
     <p class="mt-2">
       <a href="BreakingII.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -490,8 +476,8 @@
   `,
 
   'isogeny-attack6-item': `
-    <strong class="text-xl text-accent">Analysis of General SIDH (2023, Eurocrypt)</strong>
-    <p>Luciano Maino, Chloe Martindale, Lorenz Panny, Giacomo Pope and Benjamin Wesolowski analyzed general SIDH instances and developed some attacks, though none are polynomial-time.</p>
+    <strong class="text-xl text-accent">SIDH Key Recovery for Arbitrary Starting Curves (2023, EUROCRYPT)</strong>
+    <p>Luciano Maino, Chloe Martindale, Lorenz Panny, Giacomo Pope and Benjamin Wesolowski gave a subexponential-time key recovery attack on SIDH for arbitrary starting curves. If the endomorphism ring of the starting curve is known, the authors also give a conditional polynomial-time bound for key recovery.</p>
     <p class="mt-2">
       <a href="BreakingI.pdf" class="text-primary hover:underline inline-flex items-center">
         <i class="fa fa-file-pdf-o mr-2"></i>
@@ -501,7 +487,7 @@
   `,
 
   'isogeny-attack7-item': `
-    <strong class="text-xl text-accent">Complete Break of SIDH (2023, Eurocrypt)</strong>
+    <strong class="text-xl text-accent">Complete Break of SIDH (2023, EUROCRYPT)</strong>
     <p>Damien Robert achieved a complete break of SIDH using 8-dimensional abelian varieties.</p>
     <p class="mt-2">
       <a href="BreakingIII.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -519,7 +505,7 @@
                 'endomorphism-title': 'Modified Versions of SIDH',
 
   'endomorphism-attack1-item': `
-    <strong class="text-xl text-accent">M-SIDH (2023, Eurocrypt)</strong>
+    <strong class="text-xl text-accent">M-SIDH (2023, EUROCRYPT)</strong>
     <p>Tako Boris Fouotsa, Tomoki Moriya and Christophe Petit proposed M-SIDH, which hides image points to achieve security.</p>
     <p class="mt-2">
       <a href="MSIDH.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -530,7 +516,7 @@
   `,
 
   'endomorphism-attack2-item': `
-    <strong class="text-xl text-accent">FESTA Encryption (2023, Asiacrypt; 2024, Crypto)</strong>
+    <strong class="text-xl text-accent">FESTA Encryption (2023, ASIACRYPT; 2024, CRYPTO)</strong>
     <p>Andrea Basso, Luciano Maino and Giacomo Pope proposed FESTA, an encryption scheme that hides image points. Kohei Nakagawa and Hiroshi Onuki later proposed QFESTA, an optimized version.</p>
     <p class="mt-2">
       <a href="FESTA.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -547,7 +533,7 @@
   `,
 
   'endomorphism-attack3-item': `
-    <strong class="text-xl text-accent">bin-SIDH / ter-SIDH (2023, Asiacrypt)</strong>
+    <strong class="text-xl text-accent">bin-SIDH / ter-SIDH (2023, ASIACRYPT)</strong>
     <p>Andrea Basso and Tako Boris Fouotsa proposed bin-SIDH and ter-SIDH, which achieve security by selecting different subgroups.</p>
     <p class="mt-2">
       <a href="bin.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -558,7 +544,7 @@
   `,
 
  'endomorphism-attack4-item': `
-    <strong class="text-xl text-accent">Attacks on MSIDH and FESTA (2023, Asiacrypt)</strong>
+    <strong class="text-xl text-accent">Attacks on MSIDH and FESTA (2023, ASIACRYPT)</strong>
     <p>Wouter Castryck and Frederik Vercauteren proposed attacks on MSIDH and FESTA. The attack affects MSIDH with initial curves defined over \(\mathbb{F}_p\), but has no impact on other cases. It does not affect almost all instances of FESTA.</p>
     <p class="mt-2">
       <a href="breakmsidh.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -577,6 +563,16 @@
 
                 'footer-title': 'SIDH (Supersingular Isogeny Diffie-Hellman)',
                 'footer-desc': 'This page introduces the application of supersingular elliptic curve isogenies in cryptography: SIDH, aiming to provide references for researchers in related fields.',
+                'pke-title': 'Isogeny-Based Public-Key Encryption with Auxiliary Points',
+                'pke-poke': `<strong class="text-xl text-accent">POKÉ (2025, EUROCRYPT)</strong>
+                    <p>Andrea Basso and Luciano Maino proposed POKÉ, a public-key encryption scheme based on higher-dimensional isogenies.</p>
+                    <p class="mt-2"><a href="poke.pdf">POKÉ: A Compact and Efficient PKE from Higher-Dimensional Isogenies</a></p>`,
+                'pke-lit': `<strong class="text-xl text-accent">LIT-SiGamal (2025, ASIACRYPT)</strong>
+                    <p>Tomoki Moriya and Miha Stopar adapted SiGamal’s public-key encryption construction to a LIT diagram to obtain LIT-SiGamal.</p>
+                    <p class="mt-2"><a href="978-981-95-5113-2_9.pdf">LIT-SiGamal: An Efficient Isogeny-Based PKE Based on a LIT Diagram</a></p>`,
+                'pke-weak': `<strong class="text-xl text-accent">Weak Keys in POKÉ (2026, ASIACRYPT)</strong>
+                    <p>Tomoki Moriya studied how weak keys affect the two variants of POKÉ. Such keys are rare in POKÉ-2D but have a greater impact on POKÉ-4D. With the revised parameters, POKÉ-4D has parameter sizes close to those of POKÉ-2D, reducing its original efficiency advantage.</p>
+                    <p class="mt-2"><a href="poke-weak-keys.pdf">On Weak Keys of POKÉ</a></p>`,
                 'copyright': 'Copyright &copy; Introduction to SIDH'
             }
         };
@@ -623,7 +619,7 @@
                             element.innerHTML = translations[lang][key];
                         }
                         // 重新渲染MathJax公式
-                        MathJax.typesetPromise([element]).catch(err => console.error('MathJax error:', err));
+                        window.MathJax?.typesetPromise?.([element]).catch(err => console.error('MathJax error:', err));
                     });
                     
                     // 恢复元素可见性

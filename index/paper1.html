@@ -1,78 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-landscape="peach">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <title>CSIDH(Commutative Supersignular Isogeny Diffie Hellman)</title>
-    
-    <!-- Tailwind 配置 -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#36CFC9',
-                        accent: '#722ED1',
-                        dark: '#1D2129',
-                        light: '#F2F3F5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-balance {
-                text-wrap: balance;
-            }
-            .transition-lang {
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-            .card-hover {
-                transition: all 0.3s ease;
-            }
-            .card-hover:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-        }
-    </style>
+    <title>CSIDH(Commutative Supersingular Isogeny Diffie Hellman)</title>
+
+    <link rel="stylesheet" href="css/academic.css">
 </head>
 
 <body class="bg-light font-sans text-dark">
-    <!-- 语言切换按钮 -->
-    <button id="langButton" class="fixed top-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center">
+<header class="masthead topic-masthead" id="top">
+    <h1 data-lang="title">CSIDH (Commutative Supersingular Isogeny Diffie Hellman)</h1>
+    <a class="signature" href="../index.html#top">Zheng Xu（徐铮）</a>
+    <nav aria-label="Main navigation">
+        <a href="../index.html#top"><span class="en-label">Home</span><span class="zh-label">首页</span></a>
+        <a href="../index.html#publications"><span class="en-label">Publications</span><span class="zh-label">论文</span></a>
+        <a href="../index.html#topics"><span class="en-label">Topics</span><span class="zh-label">专题</span></a>
+        <a href="../index.html#resources"><span class="en-label">Links</span><span class="zh-label">链接</span></a>
+        <button id="langButton" class="fixed top-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center">
         <i class="fa fa-language mr-2"></i>
         <span id="langText">中文</span>
     </button>
-
-    <header class="bg-gradient-to-r from-primary to-accent text-white text-center py-12 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://picsum.photos/id/180/1200/400')] bg-cover bg-center"></div>
-        </div>
-        <div class="container mx-auto relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 transition-lang" data-lang="title">CSIDH</h1>
-           
-        </div>
-    </header>
+    </nav>
+</header>
+    <!-- 语言切换按钮 -->
     
-    <main class="container mx-auto p-6 md:p-10">
+
+    
+    <main class="topic-body">
         <!-- 概述部分 -->
         <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
-            <h2 class="text-3xl font-bold text-primary mb-6 transition-lang" data-lang="intro-title">CSIDH(Commutative Supersignular Isogeny Diffie Hellman)</h2>
             <p class="text-gray-700 leading-relaxed text-balance transition-lang" data-lang="intro-content">
         Isogeny-based cryptography is a type of cryptographic technique that relies on elliptic curve isogenies and offers the advantage of short sizes.
             </p> 
@@ -96,7 +57,7 @@
                 </li>
                 
 <li class="mb-2 transition-lang" data-lang="csidh2">
-                    <strong class="text-xl text-accent">Paper on Attacking CSIDH-like Problems</strong>
+                    <strong class="text-xl text-accent">Paper on Attacking CSIDH-Like Problems</strong>
                     
                     <p class="mt-2">
                         <a href="subexponential.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -155,10 +116,8 @@
                            Weak Instances of Class Group Action Based Cryptography via Self-pairings
                         </a> 
                     </p>
-                </li>
                 
- <li class="mb-2 transition-lang" data-lang="csidh7">
-                    <strong class="text-xl text-accent">Extending attacks via sesquilinear pairings (2024)</strong>
+                    <strong class="text-xl text-accent">Extending Attacks via Sesquilinear Pairings (2024)</strong>
                     <p>Joseph Macula and Katherine E. Stange improved the above attack from sesquilinaer pairings</p>
                     <p class="mt-2">
                         <a href="sepairing.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -170,16 +129,14 @@
 
                 <li class="mb-2 transition-lang" data-lang="csidh8">
                     <strong class="text-xl text-accent">OSIDH (2020)</strong>
-                    <p>Leonardo Colò and David Kohel proposed OSIDH, which differs from CSIDH in that it uses an order of an imaginary quadratic field instead of \\(\\mathbb{Z}[\\pi_p]\\) or \\(\\mathbb{Z}[\\frac{1+ \\pi_p}{2}]\\) for its endomorphism ring.</p>
+                    <p>Leonardo Colò and David Kohel introduced OSIDH. In OSIDH, an embedding of an imaginary quadratic order into the geometric endomorphism ring of a supersingular elliptic curve gives the curve an orientation.</p>
                     <p class="mt-2">
                         <a href="OSIDH.pdf" class="text-primary hover:underline inline-flex items-center">
                             <i class="fa fa-file-pdf-o mr-2"></i>
                           Orienting Supersingular Isogeny Graphs
                         </a> 
                     </p>
-                </li>
-
-                <li class="mb-2 transition-lang" data-lang="csidh9">
+                
                     <strong class="text-xl text-accent">Attack on the DDH Problem in OSIDH (2022)</strong>
                     <p>Wouter Castryck, Marc Houben, Frederik Vercauteren, and Benjamin Wesolowski attacked the DDH problem in OSIDH.</p>
                     <p class="mt-2">
@@ -190,15 +147,26 @@
                     </p>
                 </li>
 
-<li class="mb-2 transition-lang" data-lang="csidh10">
-                    <strong class="text-xl text-accent">PEGASIS: Practical Effective Class Group Action using 4-Dimensional Isogenies (2025)</strong>
-                    <p>Pierrick Dartois, Jonathan Komada Eriksen, Tako Boris Fouotsa, Arthur Herlédan Le Merdy, Riccardo Invernizzi, Damien Robert, Ryan Rueger, Frederik Vercauteren, Benjamin Wesolowski attacked the DDH problem in OSIDH.</p>
-                    <p class="mt-2">
-                        <a href="pegasis.pdf" class="text-primary hover:underline inline-flex items-center">
-                            <i class="fa fa-file-pdf-o mr-2"></i>
-                          PEGASIS: Practical Effective Class Group Action using 4-Dimensional Isogenies
-                        </a> 
-                    </p>
+                <li class="mb-2 transition-lang" data-lang="csidh10">
+                    <strong class="text-xl text-accent">Deterministic CSIDH Group Action (2025, CRYPTO)</strong>
+                    <p>Marc Houben gave a deterministic, constant-time algorithm for evaluating the CSIDH group action.</p>
+                    <p class="mt-2"><a href="978-3-032-01855-7_4.pdf">Deterministic Algorithms for Class Group Actions</a></p>
+                </li>
+                <li class="mb-2 transition-lang" data-lang="csidh-pegasis-coral">
+                    <strong class="text-xl text-accent">PEGASIS (2025, CRYPTO)</strong>
+                    <p>Pierrick Dartois, Jonathan Komada Eriksen, Tako Boris Fouotsa, Arthur Herlédan Le Merdy, Riccardo Invernizzi, Damien Robert, Ryan Rueger, Frederik Vercauteren and Benjamin Wesolowski introduced PEGASIS. It uses four-dimensional isogenies to compute the action of any ideal class of an imaginary quadratic order on supersingular elliptic curves primitively oriented by that order.</p>
+                    <p class="mt-2"><a href="pegasis.pdf">PEGASIS: Practical Effective Class Group Action Using 4-Dimensional Isogenies</a></p>
+                    <strong class="text-xl text-accent">qt-PEGASIS (2026, EUROCRYPT)</strong>
+                    <p>Pierrick Dartois, Jonathan Komada Eriksen, Riccardo Invernizzi and Frederik Vercauteren introduced qt-Pegasis, which simplifies and speeds up the evaluation of arbitrary ideal class actions in PEGASIS.</p>
+                    <p class="mt-2"><a href="978-3-032-25327-9_22.pdf">qt-Pegasis: Simpler and Faster Effective Class Group Actions</a></p>
+                    <strong class="text-xl text-accent">CORAL: Computing Class Group Actions Using Two-Dimensional Isogenies (2026, CRYPTO)</strong>
+                    <p>Andrea Basso, Giacomo Borin, Ryan Rueger and Sina Schaeffler used two-dimensional isogenies to evaluate a restricted form of the PEGASIS class group action, improving the efficiency of key exchange.</p>
+                    <p class="mt-2"><a href="978-3-032-35398-6_17.pdf">CORAL: Faster Isogeny Group Action for Post-Quantum NIKE</a></p>
+                </li>
+                <li class="mb-2 transition-lang" data-lang="csidh-large-discriminant">
+                    <strong class="text-xl text-accent">Group Actions from Orientations of Large Discriminant (2025, ASIACRYPT)</strong>
+                    <p>Marc Houben gave a deterministic algorithm for class group actions on supersingular elliptic curves oriented by imaginary quadratic orders of large discriminant. Increasing the absolute discriminant while keeping the base field fixed improves resistance to quantum hidden-shift attacks.</p>
+                    <p class="mt-2"><a href="dis.pdf">Efficient Post-Quantum Commutative Group Actions from Orientations of Large Discriminant</a></p>
                 </li>
 
                 <li class="mb-2 transition-lang" data-lang="csidh11">
@@ -212,11 +180,11 @@
         
        
     
-    <footer class="bg-dark text-white py-12">
+    <footer class="shoreline">
         <div class="container mx-auto px-6 md:px-10">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4 transition-lang" data-lang="footer-title">Introduction to Isogeny Hard Problems</h3>
+                    <h3 class="text-xl font-bold mb-4 transition-lang" data-lang="footer-title">CSIDH (Commutative Supersingular Isogeny Diffie Hellman)</h3>
                     <p class="text-gray-400 max-w-md transition-lang" data-lang="footer-desc">
                         This page introduces the core hard problems, attack methods, and research progress in supersingular elliptic curve isogeny cryptography, aiming to provide references for researchers in related fields.
                     </p>
@@ -235,9 +203,9 @@
         // 翻译数据（中英文对照）
         const translations = {
             'zh-CN': {
-                'title': 'CSIDH (交换的超奇异椭圆曲线同源密钥分享)',
+                'title': 'CSIDH (交换的超奇异椭圆曲线同源密钥交换)',
                 
-                'intro-title': 'CSIDH (交换的超奇异椭圆曲线同源密钥分享)',
+                'intro-title': 'CSIDH (交换的超奇异椭圆曲线同源密钥交换)',
                 'intro-content': 'CSIDH的显著优点是传输尺寸较小，适用于资源受限的场景。',
                 
                 'csidh-title': 'CSIDH',
@@ -321,10 +289,7 @@
         Weak Instances of Class Group Action Based Cryptography via Self-pairings
       </a>
     </p>
-  `,
-
-'csidh7':`
-                    <strong class="text-xl text-accent">Extending attacks via sesquilinear pairings (2024年, 亚密)</strong>
+                    <strong class="text-xl text-accent">利用半双线性配对推广类群作用分析（2024 年，亚密）</strong>
                     <p>Joseph Macula 和 Katherine E. Stange 通过新的配对 改进了上述攻击。</p>
                     <p class="mt-2">
                         <a href="sepairing.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -336,16 +301,13 @@
 
   'csidh8': `
     <strong class="text-xl text-accent">OSIDH 的提出（2020 年, J. Math. Cryptol.）</strong>
-    <p>Leonardo Colò 和 David Kohel 提出了 OSIDH。与 CSIDH 不同，OSIDH 所采用的自同态环不再是 \\(\\mathbb{Z}[\\pi_p]\\) 或 \\(\\mathbb{Z}[\\frac{1+ \\pi_p}{2}]\\)，而是虚二次域的某个 order。</p>
+    <p>Leonardo Colò 和 David Kohel 提出了 OSIDH。OSIDH 通过将一个虚二次序嵌入超奇异椭圆曲线的几何自同态环，为曲线赋予定向。</p>
     <p class="mt-2">
       <a href="OSIDH.pdf" class="text-primary hover:underline inline-flex items-center">
         <i class="fa fa-file-pdf-o mr-2"></i>
         Orienting Supersingular Isogeny Graphs
       </a>
     </p>
-  `,
-
-  'csidh9': `
     <strong class="text-xl text-accent">OSIDH 的 DDH 问题被攻击（2022 年, ANTS）</strong>
     <p>Wouter Castryck、Marc Houben、Frederik Vercauteren 和 Benjamin Wesolowski 攻击了 OSIDH 中的 DDH 问题。</p>
     <p class="mt-2">
@@ -357,15 +319,26 @@
   `,
 
    'csidh10': `
-  <strong class="text-xl text-accent">PEGASIS: Practical Effective Class Group Action using 4-Dimensional Isogenies (2025, 美密)</strong>
-                    <p>Pierrick Dartois、 Jonathan Komada Eriksen、 Tako Boris Fouotsa、 Arthur Herlédan Le Merdy、 Riccardo Invernizzi、 Damien Robert、 Ryan Rueger、 Frederik Vercauteren和 Benjamin Wesolowski 提出了利用高维同源计算类群作用,并将其运用到了CSIDH类的协议中.</p>
-                    <p class="mt-2">
-                        <a href="pegasis.pdf" class="text-primary hover:underline inline-flex items-center">
-                            <i class="fa fa-file-pdf-o mr-2"></i>
-                          PEGASIS: Practical Effective Class Group Action using 4-Dimensional Isogenies
-                        </a> 
-                    </p>
-          `,
+                    <strong class="text-xl text-accent">CSIDH 类群作用的确定性算法（2025 年，美密）</strong>
+                    <p>Marc Houben 给出了计算 CSIDH 类群作用的确定性常数时间算法。</p>
+                    <p class="mt-2"><a href="978-3-032-01855-7_4.pdf">Deterministic Algorithms for Class Group Actions</a></p>
+   `,
+   'csidh-large-discriminant': `
+                    <strong class="text-xl text-accent">大判别式定向上的类群作用（2025 年，亚密）</strong>
+                    <p>Marc Houben 给出了计算大判别式虚二次序的理想类群在定向超奇异椭圆曲线上作用的确定性算法。该构造可以在固定基域的同时增大判别式的绝对值，进而抵抗量子攻击。</p>
+                    <p class="mt-2"><a href="dis.pdf">Efficient Post-Quantum Commutative Group Actions from Orientations of Large Discriminant</a></p>
+   `,
+   'csidh-pegasis-coral': `
+                    <strong class="text-xl text-accent">PEGASIS：利用四维同源计算类群作用（2025 年，美密）</strong>
+                    <p>Pierrick Dartois、Jonathan Komada Eriksen、Tako Boris Fouotsa、Arthur Herlédan Le Merdy、Riccardo Invernizzi、Damien Robert、Ryan Rueger、Frederik Vercauteren 和 Benjamin Wesolowski 提出了 PEGASIS。该算法利用四维同源，计算虚二次序的任意理想类在由该序本原定向的超奇异椭圆曲线上的作用。</p>
+                    <p class="mt-2"><a href="pegasis.pdf">PEGASIS: Practical Effective Class Group Action Using 4-Dimensional Isogenies</a></p>
+                    <strong class="text-xl text-accent">qt-PEGASIS：简化类群作用的计算（2026 年，欧密）</strong>
+                    <p>Pierrick Dartois、Jonathan Komada Eriksen、Riccardo Invernizzi 和 Frederik Vercauteren 提出了 qt-Pegasis，简化并加快了 PEGASIS 中任意理想类作用的计算。</p>
+                    <p class="mt-2"><a href="978-3-032-25327-9_22.pdf">qt-Pegasis: Simpler and Faster Effective Class Group Actions</a></p>
+                    <strong class="text-xl text-accent">CORAL：利用二维同源计算类群作用（2026 年，美密）</strong>
+                    <p>Andrea Basso、Giacomo Borin、Ryan Rueger 和 Sina Schaeffler 提出了利用二维同源计算 PEGASIS 类群作用的一种受限形式，提高了密钥交换的效率。</p>
+                    <p class="mt-2"><a href="978-3-032-35398-6_17.pdf">CORAL: Faster Isogeny Group Action for Post-Quantum NIKE</a></p>
+   `,
 
   'csidh11': `
   <strong class="text-xl text-accent">总结</strong>
@@ -375,21 +348,21 @@
 
 
 
-                'footer-title': 'CSIDH (Commutative Supersignular Isogeny Diffie Hellman)',
+                'footer-title': 'CSIDH (Commutative Supersingular Isogeny Diffie Hellman)',
                 'footer-desc': '本页面介绍了超奇异椭圆曲线同源在密码学中设计:CSIDH，旨在为相关领域的研究人员提供参考。',
                 'copyright': '版权所有 &copy; 2025 CSIDH介绍'
             },
             'en': {
-                'title': 'CSIDH (Commutative Supersignular Isogeny Diffie Hellman)',
+                'title': 'CSIDH (Commutative Supersingular Isogeny Diffie Hellman)',
                 
-                'intro-title': 'CSIDH (Commutative Supersignular Isogeny Diffie Hellman)',
+                'intro-title': 'CSIDH (Commutative Supersingular Isogeny Diffie Hellman)',
                 'intro-content': '<div class="mb-6"> A notable advantage of CSIDH is its small size, making it suitable for resource-constrained scenarios.</div>', 
           
 
 
 'csidh-title': 'CSIDH',
   'csidh1': `
-    <strong class="text-xl text-accent">Origin (2018, Asiacrypt)</strong>
+    <strong class="text-xl text-accent">Origin (2018, ASIACRYPT)</strong>
     <p>Wouter Castryck, Tanja Lange, Chloe Martindale, Lorenz Panny and Joost Renes first proposed CSIDH (Commutative SIDH), a key exchange protocol based on supersingular elliptic curve isogenies over \\(\\mathbb{F}_p\\). CSIDH uses elliptic curves over finite fields \\(\\mathbb{F}_p\\), similar to ordinary curves with complex multiplication, and involves the action of ideal class groups (\\(\\mathbb{Z}[\\pi_p]\\) or \\(\\mathbb{Z}[\\frac{1+ \\pi_p}{2}]\\)), which are vulnerable to quantum attacks.</p>
     <p class="mt-2">
       <a href="CSIDH.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -400,7 +373,7 @@
   `,
 
 'csidh2': `
-    <strong class="text-xl text-accent">Subexponential Time Attack on CSIDH (2014, J. Math. Cryptol; 2020, Eurocrypt; 2019, Eurocrypt)</strong>
+    <strong class="text-xl text-accent">Subexponential Time Attack on CSIDH (2014, J. Math. Cryptol; 2020, EUROCRYPT; 2019, EUROCRYPT)</strong>
     <p> Andrew Childs, David Jao, and Vladimir Soukharev proposed a subexponential time approach to attack the Hidden Shift Problem, thus attacked CSIDH. Xavier Bonnetain and André Schrottenloher provided an analysis of the security of CSIDH under quantum computing. Daniel J. Bernstein, Tanja Lange, Chloe Martindale and Lorenz Panny presented attacks and optimizations on CSIDH in specific quantum circuits.</p>
     <p class="mt-2">
       <a href="subexponential.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -422,7 +395,7 @@
 
 
   'csidh3': `
-    <strong class="text-xl text-accent">Signature Schemes CSI-FiSh and SeaSign (2019, Asiacrypt; 2019, Eurocrypt)</strong>
+    <strong class="text-xl text-accent">Signature Schemes CSI-FiSh and SeaSign (2019, ASIACRYPT; 2019, EUROCRYPT)</strong>
     <p>Ward Beullens, Thorsten Kleinjung and Frederik Vercauteren proposed CSI-FiSh, a signature scheme based on CSIDH. Luca De Feo and Steven D. Galbraith proposed SeaSign. The main difference is that CSI-FiSh uses a cyclic ideal class group.</p>
     <p class="mt-2">
       <a href="CSI.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -438,7 +411,7 @@
   `,
 
   'csidh4': `
-    <strong class="text-xl text-accent">SiGamal Encryption (2020, Asiacrypt)</strong>
+    <strong class="text-xl text-accent">SiGamal Encryption (2020, ASIACRYPT)</strong>
     <p>Tomoki Moriya, Hiroshi Onuki and Tsuyoshi Takagi  proposed SiGamal, a public-key encryption scheme based on CSIDH. It also enables a pseudorandom function construction based on supersingular isogenies.</p>
     <p class="mt-2">
       <a href="SiGamal.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -449,7 +422,7 @@
   `,
 
   'csidh5': `
-    <strong class="text-xl text-accent">Attack on the DDH Problem in CSIDH (2020, Crypto)</strong>
+    <strong class="text-xl text-accent">Attack on the DDH Problem in CSIDH (2020, CRYPTO)</strong>
     <p>Wouter Castryck, Jana Sotakova and Frederik Vercauteren attacked the DDH problem in CSIDH (when \\(p\\equiv 1\\pmod 4\\)) using quadratic characters (genus theory).</p>
     <p class="mt-2">
       <a href="BreakingDDH.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -462,7 +435,7 @@
 
 
   'csidh6': `
-    <strong class="text-xl text-accent">Attacking CSIDH Using SIDH Techniques (2023, Crypto)</strong>
+    <strong class="text-xl text-accent">Attacking CSIDH Using SIDH Techniques (2023, CRYPTO)</strong>
     <p>Wouter Castryck, Marc Houben, Simon-Philipp Merz, Marzio Mula, Sam van Buuren and Frederik Vercauteren used correspondences between groups generated by eigenvectors of the Frobenius endomorphism, computed torsion points by pairing, to attack CSIDH using SIDH techniques. However, due to limitations of the Tate pairing, this attack is not effective.</p>
     <p class="mt-2">
       <a href="Weak.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -470,10 +443,7 @@
         Weak Instances of Class Group Action Based Cryptography via Self-pairings
       </a>
     </p>
-  `,
-
-'csidh7':`
-                    <strong class="text-xl text-accent">Extending attacks via sesquilinear pairings (2024, Asiacrypt)</strong>
+                    <strong class="text-xl text-accent">Extending Attacks via Sesquilinear Pairings (2024, ASIACRYPT)</strong>
                     <p>Joseph Macula and Katherine E. Stange improved the above attack from sesquilinaer pairings.</p>
                     <p class="mt-2">
                         <a href="sepairing.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -485,16 +455,13 @@
 
   'csidh8': `
     <strong class="text-xl text-accent">OSIDH (2020, J. Math. Cryptol)</strong>
-    <p>Leonardo Colò and David Kohel proposed OSIDH, which differs from CSIDH in that it uses an order of  imaginary quadratic field instead of \\(\\mathbb{Z}[\\pi_p]\\) or \\(\\mathbb{Z}[\\frac{1+ \\pi_p}{2}]\\) for its endomorphism ring.</p>
+    <p>Leonardo Colò and David Kohel introduced OSIDH. In OSIDH, an embedding of an imaginary quadratic order into the geometric endomorphism ring of a supersingular elliptic curve gives the curve an orientation.</p>
     <p class="mt-2">
       <a href="OSIDH.pdf" class="text-primary hover:underline inline-flex items-center">
         <i class="fa fa-file-pdf-o mr-2"></i>
         Orienting Supersingular Isogeny Graphs
       </a>
     </p>
-  `,
-
-  'csidh9': `
     <strong class="text-xl text-accent">Attack on the DDH Problem in OSIDH (2022, ANTS)</strong>
     <p>Wouter Castryck, Marc Houben, Frederik Vercauteren and Benjamin Wesolowski attacked the DDH problem in OSIDH.</p>
     <p class="mt-2">
@@ -506,15 +473,26 @@
   `,
 
    'csidh10': `
-  <strong class="text-xl text-accent">PEGASIS: Practical Effective Class Group Action using 4-Dimensional Isogenies (2025, Crypto)</strong>
-                    <p>Pierrick Dartois, Jonathan Komada Eriksen, Tako Boris Fouotsa, Arthur Herlédan Le Merdy, Riccardo Invernizzi, Damien Robert, Ryan Rueger, Frederik Vercauteren, Benjamin Wesolowski propose to use high-dimensional isogeny computation for class group actions and apply it to CSIDH-type protocols.</p>
-                    <p class="mt-2">
-                        <a href="pegasis.pdf" class="text-primary hover:underline inline-flex items-center">
-                            <i class="fa fa-file-pdf-o mr-2"></i>
-                          PEGASIS: Practical Effective Class Group Action using 4-Dimensional Isogenies
-                        </a> 
-                    </p>
-          `,
+                    <strong class="text-xl text-accent">Deterministic CSIDH Group Action (2025, CRYPTO)</strong>
+                    <p>Marc Houben gave a deterministic, constant-time algorithm for evaluating the CSIDH group action.</p>
+                    <p class="mt-2"><a href="978-3-032-01855-7_4.pdf">Deterministic Algorithms for Class Group Actions</a></p>
+   `,
+   'csidh-large-discriminant': `
+                    <strong class="text-xl text-accent">Group Actions from Orientations of Large Discriminant (2025, ASIACRYPT)</strong>
+                    <p>Marc Houben gave a deterministic algorithm for class group actions on supersingular elliptic curves oriented by imaginary quadratic orders of large discriminant. Increasing the absolute discriminant while keeping the base field fixed improves resistance to quantum hidden-shift attacks.</p>
+                    <p class="mt-2"><a href="dis.pdf">Efficient Post-Quantum Commutative Group Actions from Orientations of Large Discriminant</a></p>
+   `,
+   'csidh-pegasis-coral': `
+                    <strong class="text-xl text-accent">PEGASIS (2025, CRYPTO)</strong>
+                    <p>Pierrick Dartois, Jonathan Komada Eriksen, Tako Boris Fouotsa, Arthur Herlédan Le Merdy, Riccardo Invernizzi, Damien Robert, Ryan Rueger, Frederik Vercauteren and Benjamin Wesolowski introduced PEGASIS. It uses four-dimensional isogenies to compute the action of any ideal class of an imaginary quadratic order on supersingular elliptic curves primitively oriented by that order.</p>
+                    <p class="mt-2"><a href="pegasis.pdf">PEGASIS: Practical Effective Class Group Action Using 4-Dimensional Isogenies</a></p>
+                    <strong class="text-xl text-accent">qt-PEGASIS (2026, EUROCRYPT)</strong>
+                    <p>Pierrick Dartois, Jonathan Komada Eriksen, Riccardo Invernizzi and Frederik Vercauteren introduced qt-Pegasis, which simplifies and speeds up the evaluation of arbitrary ideal class actions in PEGASIS.</p>
+                    <p class="mt-2"><a href="978-3-032-25327-9_22.pdf">qt-Pegasis: Simpler and Faster Effective Class Group Actions</a></p>
+                    <strong class="text-xl text-accent">CORAL: Computing Class Group Actions Using Two-Dimensional Isogenies (2026, CRYPTO)</strong>
+                    <p>Andrea Basso, Giacomo Borin, Ryan Rueger and Sina Schaeffler used two-dimensional isogenies to evaluate a restricted form of the PEGASIS class group action, improving the efficiency of key exchange.</p>
+                    <p class="mt-2"><a href="978-3-032-35398-6_17.pdf">CORAL: Faster Isogeny Group Action for Post-Quantum NIKE</a></p>
+   `,
 
   'csidh11': `
   <strong class="text-xl text-accent">Summary</strong>
@@ -523,7 +501,7 @@
 
 
 
-                'footer-title': 'CSIDH (Commutative Supersignular Isogeny Diffie Hellman)',
+                'footer-title': 'CSIDH (Commutative Supersingular Isogeny Diffie Hellman)',
                 'footer-desc': 'This page introduces the application of supersingular elliptic curve isogenies in cryptography:CSIDH, aiming to provide references for researchers in related fields.',
                 'copyright': 'Copyright &copy; 2025 Introduction to CSIDH'
             }
@@ -571,7 +549,7 @@
                             element.innerHTML = translations[lang][key];
                         }
                         // 重新渲染MathJax公式
-                        MathJax.typesetPromise([element]).catch(err => console.error('MathJax error:', err));
+                        window.MathJax?.typesetPromise?.([element]).catch(err => console.error('MathJax error:', err));
                     });
                     
                     // 恢复元素可见性

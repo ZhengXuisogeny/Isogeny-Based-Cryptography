@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-landscape="maple">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>MIKE</title>
+
+    <link rel="stylesheet" href="css/academic.css">
+</head>
+
+<body class="bg-light font-sans text-dark">
+<header class="masthead topic-masthead" id="top">
+    <h1 data-lang="title">MIKE(Module Isogeny Key Exchange) and Related Schemes</h1>
+    <a class="signature" href="../index.html#top">Zheng Xu（徐铮）</a>
+    <nav aria-label="Main navigation">
+        <a href="../index.html#top"><span class="en-label">Home</span><span class="zh-label">首页</span></a>
+        <a href="../index.html#publications"><span class="en-label">Publications</span><span class="zh-label">论文</span></a>
+        <a href="../index.html#topics"><span class="en-label">Topics</span><span class="zh-label">专题</span></a>
+        <a href="../index.html#resources"><span class="en-label">Links</span><span class="zh-label">链接</span></a>
+        <button id="langButton" class="fixed top-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center">
+        <i class="fa fa-language mr-2"></i>
+        <span id="langText">中文</span>
+    </button>
+    </nav>
+</header>
+    <!-- 语言切换按钮 -->
+    
+
+    
+    <main class="topic-body">
+        
+        <!-- 高维同源问题部分 -->
+        <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
+            <h2 class="text-3xl font-bold text-primary mb-6 transition-lang" data-lang="high-title">High-dimensional Isogeny-based Cryptography</h2>
+            <ol class="list-decimal list-inside text-gray-700 leading-relaxed space-y-6">
+                <li class="mb-2 transition-lang" data-lang="high1-item"> 
+                    <strong class="text-xl text-accent">CDS-Hash Function（2020）</strong>
+                    <p>Wouter Castryck, Thomas Decru, and Benjamin Smith proposed a new hash function constructed using two-dimensional Abelian varieties.</p>
+                    <p class="mt-2">
+                        <a href="g2.pdf" class="text-primary hover:underline inline-flex items-center">
+                            <i class="fa fa-file-pdf-o mr-2"></i>
+                           Hash Functions From Superspecial Genus-2 Curves Using Richelot Isogenies
+                        </a>
+                    </p>
+                </li>
+                
+                <li class="mb-2 transition-lang" data-lang="high2-item">
+                    <strong class="text-xl text-accent">Two-Dimensional SIDH(2019)</strong>
+                    <p>E. V. Flynn and YanBo Ti proposed two-dimensional SIDH.</p>
+                    <p class="mt-2">
+                        <a href="g1.pdf" class="text-primary hover:underline inline-flex items-center">
+                            <i class="fa fa-file-pdf-o mr-2"></i>
+                            Genus Two Isogeny Cryptography
+                        </a>
+                    </p>
+                </li> 
+                
+                <li class="mb-2 transition-lang" data-lang="high4-item">
+                    <strong class="text-xl text-accent">MIKE (2026, Preprint)</strong>
+                    <p>Andrea Basso and coauthors presented MIKE, a non-interactive key exchange based on the action of rank-2 Hermitian modules on supersingular elliptic curves, and gave a constant-time C implementation. The fast parameter set targeting NIST security level I uses 80-byte public keys.</p>
+                    <p class="mt-2"><a href="mike-2026.pdf">MIKE: a fast and compact post-quantum NIKE</a></p>
+                </li> 
+                <li class="mb-2 transition-lang" data-lang="shimura-class-group">
+                    <strong class="text-xl text-accent">Shimura Class Group Actions on Oriented Superspecial Abelian Varieties (2026, Preprint)</strong>
+                    <p>Wouter Castryck, Bogdan Adrian Dina, Péter Kutas and Gioella Lorenzon studied the action of the Shimura class group on superspecial principally polarized abelian varieties with a complex multiplication (CM) orientation. They used higher-dimensional isogenies to represent CM orientations and gave a method for computing the action in the restricted effective group action model.</p>
+                    <p class="mt-2"><a href="2026-2555.pdf">Post-quantum commutative group actions from oriented superspecial abelian varieties</a></p>
+                </li>
+            </ol> 
+        </section>  
+        
+    </main>
+    
+    <footer class="shoreline">
+        <div class="container mx-auto px-6 md:px-10">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4 transition-lang" data-lang="footer-title">MIKE</h3>
+                    <p class="text-gray-400 max-w-md transition-lang" data-lang="footer-desc">
+                        This page introduces the core hard problems, attack methods, and research progress in supersingular elliptic curve isogeny cryptography, aiming to provide references for researchers in related fields.
+                    </p>
+                </div>
+                
+               
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 transition-lang" data-lang="copyright">
+                Copyright &copy; 2025 Abelian Varieties
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 翻译数据（中英文对照）
+        const translations = {
+            'zh-CN': {
+                'title': 'MIKE(模作用密钥交换)及相关协议',
+                'high-title': '高维同源密码',
+  'high1-item': `
+    <strong class="text-xl text-accent">CDS-Hash 函数（2020年, J. Math. Cryptol）</strong>：  Wouter Castryck、Thomas Decru 和 Benjamin Smith 提出了利用二维Abel 簇构造新的Hash 函数.
+    <p class="mt-2">
+      <a href="g2.pdf" class="text-primary hover:underline inline-flex items-center">
+        Hash Functions From Superspecial Genus-2 &nbsp Curves Using Richelot Isogenies
+      </a>
+    </p>
+  `,
+
+  'high2-item': `
+    <strong class="text-xl text-accent">二维SIDH（2019年, PQC）</strong>： E.V.Flynn 和 YanBo Ti 提出了二维上的SIDH.
+    <p class="mt-2">
+      <a href="g1.pdf" class="text-primary hover:underline inline-flex items-center">
+        Genus Two Isogeny Cryptography
+      </a>
+    </p>
+  `,
+
+  'high4-item': `
+    <strong class="text-xl text-accent">MIKE（2026 年，预印本）</strong>
+    <p>Andrea Basso 等人基于超奇异椭圆曲线上的秩 2 Hermitian 模作用构造了非交互式密钥交换协议 MIKE，并给出了常数时间的 C 语言实现。在面向 NIST 安全等级 I 的快速参数下，公钥为 80 字节。</p>
+    <p class="mt-2"><a href="mike-2026.pdf">MIKE: a fast and compact post-quantum NIKE</a></p>
+  `,
+  'shimura-class-group': `
+    <strong class="text-xl text-accent">定向超特殊 Abel 簇上的 Shimura 类群作用（2026 年，预印本）</strong>
+    <p>Wouter Castryck、Bogdan Adrian Dina、Péter Kutas 和 Gioella Lorenzon 研究了 Shimura 类群在带有复乘（CM）定向的主极化超特殊 Abel 簇上的作用。作者利用高维同源表示 CM 定向，并给出了在受限有效群作用模型下计算该类群作用的方法。</p>
+    <p class="mt-2"><a href="2026-2555.pdf">Post-quantum commutative group actions from oriented superspecial abelian varieties</a></p>
+  `,
+
+                'footer-title': 'MIKE',
+                'footer-desc': '本页面介绍了Abel簇上的高维同源的数学问题及在密码学中的设计，旨在为相关领域的研究人员提供参考。',
+                'copyright': '版权所有 &copy; 2025 Abel簇介绍'
+            },
+            'en': {
+                'title': 'MIKE(Module Isogeny Key Exchange) and Related Schemes',
+                'high-title': 'High-dimensional Isogeny-based Cryptography',
+'high1-item': `
+    <strong class="text-xl text-accent">CDS-Hash Function (2020, J. Math. Cryptol)</strong>: Wouter Castryck, Thomas Decru and Benjamin Smith proposed a new hash function constructed using two-dimensional Abelian varieties.
+    <p class="mt-2">
+      <a href="g2.pdf" class="text-primary hover:underline inline-flex items-center">
+        Hash Functions From Superspecial Genus-2 Curves Using Richelot Isogenies
+      </a>
+    </p>
+  `,
+
+  'high2-item': `
+    <strong class="text-xl text-accent">Two-Dimensional SIDH (2019, PQC)</strong>: E. V. Flynn and Yan Bo Ti proposed two-dimensional SIDH.
+    <p class="mt-2">
+      <a href="g1.pdf" class="text-primary hover:underline inline-flex items-center">
+        Genus Two Isogeny Cryptography
+      </a>
+    </p>
+  `,
+
+
+  'high4-item': `
+    <strong class="text-xl text-accent">MIKE (2026, Preprint)</strong>
+    <p>Andrea Basso and coauthors presented MIKE, a non-interactive key exchange based on the action of rank-2 Hermitian modules on supersingular elliptic curves, and gave a constant-time C implementation. The fast parameter set targeting NIST security level I uses 80-byte public keys.</p>
+    <p class="mt-2"><a href="mike-2026.pdf">MIKE: a fast and compact post-quantum NIKE</a></p>
+  `,
+  'shimura-class-group': `
+    <strong class="text-xl text-accent">Shimura Class Group Actions on Oriented Superspecial Abelian Varieties (2026, Preprint)</strong>
+    <p>Wouter Castryck, Bogdan Adrian Dina, Péter Kutas and Gioella Lorenzon studied the action of the Shimura class group on superspecial principally polarized abelian varieties with a complex multiplication (CM) orientation. They used higher-dimensional isogenies to represent CM orientations and gave a method for computing the action in the restricted effective group action model.</p>
+    <p class="mt-2"><a href="2026-2555.pdf">Post-quantum commutative group actions from oriented superspecial abelian varieties</a></p>
+  `,
+
+                'footer-title': 'MIKE',
+                'footer-desc': 'This page introduces the mathmatics problem of abelian varieties and application of abelian varieties isogenies in cryptography, aiming to provide references for researchers in related fields.',
+                'copyright': 'Copyright &copy; 2025 Abelian Varieties'
+            }
+        };
+
+        // 语言切换逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButton = document.getElementById('langButton');
+            const langText = document.getElementById('langText');
+            let currentLang = 'en'; // 默认显示英文
+            
+            // 初始应用英文翻译
+            applyTranslation('en');
+            
+            langButton.addEventListener('click', function() {
+                // 切换语言
+                currentLang = currentLang === 'en' ? 'zh-CN' : 'en';
+                
+                // 更新按钮文本
+                langText.textContent = currentLang === 'en' ? '中文' : 'English';
+                
+                // 应用翻译
+                applyTranslation(currentLang);
+                
+                // 更新HTML语言属性
+                document.documentElement.lang = currentLang;
+            });
+            
+            function applyTranslation(lang) {
+                // 获取所有需要翻译的元素
+                const elements = document.querySelectorAll('[data-lang]');
+                
+                // 应用淡入淡出效果
+                elements.forEach(element => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(10px)';
+                });
+                
+                // 延迟应用翻译，等待动画效果
+                setTimeout(() => {
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-lang');
+                        if (translations[lang] && translations[lang][key]) {
+                            // 处理HTML内容
+                            element.innerHTML = translations[lang][key];
+                        }
+                        // 重新渲染MathJax公式
+                        window.MathJax?.typesetPromise?.([element]).catch(err => console.error('MathJax error:', err));
+                    });
+                    
+                    // 恢复元素可见性
+                    elements.forEach(element => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    });
+                }, 300);
+            }
+        });
+    </script>
+</body>
+
+</html>

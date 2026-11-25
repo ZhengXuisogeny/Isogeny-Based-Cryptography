@@ -1,138 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-landscape="violet">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>Abelian Varieties</title>
-    
-    <!-- Tailwind 配置 -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#36CFC9',
-                        accent: '#722ED1',
-                        dark: '#1D2129',
-                        light: '#F2F3F5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-balance {
-                text-wrap: balance;
-            }
-            .transition-lang {
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-            .card-hover {
-                transition: all 0.3s ease;
-            }
-            .card-hover:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-        }
-    </style>
+
+    <link rel="stylesheet" href="css/academic.css">
 </head>
 
 <body class="bg-light font-sans text-dark">
-    <!-- 语言切换按钮 -->
-    <button id="langButton" class="fixed top-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center">
+<header class="masthead topic-masthead" id="top">
+    <h1 data-lang="title">Abelian Varieties</h1>
+    <a class="signature" href="../index.html#top">Zheng Xu（徐铮）</a>
+    <nav aria-label="Main navigation">
+        <a href="../index.html#top"><span class="en-label">Home</span><span class="zh-label">首页</span></a>
+        <a href="../index.html#publications"><span class="en-label">Publications</span><span class="zh-label">论文</span></a>
+        <a href="../index.html#topics"><span class="en-label">Topics</span><span class="zh-label">专题</span></a>
+        <a href="../index.html#resources"><span class="en-label">Links</span><span class="zh-label">链接</span></a>
+        <button id="langButton" class="fixed top-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center">
         <i class="fa fa-language mr-2"></i>
         <span id="langText">中文</span>
     </button>
-
-    <header class="bg-gradient-to-r from-primary to-accent text-white text-center py-12 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://picsum.photos/id/180/1200/400')] bg-cover bg-center"></div>
-        </div>
-        <div class="container mx-auto relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 transition-lang" data-lang="title">Abel Varieties(Updating)</h1>
-           
-        </div>
-    </header>
+    </nav>
+</header>
+    <!-- 语言切换按钮 -->
     
-    <main class="container mx-auto p-6 md:p-10">
+
+    
+    <main class="topic-body">
         <!-- 概述部分 -->
         <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
-            <h2 class="text-3xl font-bold text-primary mb-6 transition-lang" data-lang="intro-title">Abel Varieties</h2>
             <p class="text-gray-700 leading-relaxed text-balance transition-lang" data-lang="intro-content">
        Recently, the focus of research in isogeny-based cryptography has largely moved to abelian varieties, and techniques related to Abelian varieties have become a hot issue in isogeny-based cryptography.
             </p> 
         </section>
-        
-        <!-- 高维同源问题部分 -->
-        <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
-            <h2 class="text-3xl font-bold text-primary mb-6 transition-lang" data-lang="high-title">High-dimensional Isogeny-based Cryptography</h2>
-            <ol class="list-decimal list-inside text-gray-700 leading-relaxed space-y-6">
-                <li class="mb-2 transition-lang" data-lang="high1-item"> 
-                    <strong class="text-xl text-accent">CDS-Hash Function（2020）</strong>
-                    <p>Wouter Castryck, Thomas Decru, and Benjamin Smith proposed a new hash function constructed using two-dimensional Abelian varieties.</p>
-                    <p class="mt-2">
-                        <a href="g2.pdf" class="text-primary hover:underline inline-flex items-center">
-                            <i class="fa fa-file-pdf-o mr-2"></i>
-                           Hash Functions From Superspecial Genus-2 Curves Using Richelot Isogenies
-                        </a>
-                    </p>
-                </li>
-                
-                <li class="mb-2 transition-lang" data-lang="high2-item">
-                    <strong class="text-xl text-accent">Two-dimensional SIDH(2019)</strong>
-                    <p>E. V. Flynn and YanBo Ti proposed two-dimensional SIDH.</p>
-                    <p class="mt-2">
-                        <a href="g1.pdf" class="text-primary hover:underline inline-flex items-center">
-                            <i class="fa fa-file-pdf-o mr-2"></i>
-                            Genus Two Isogeny Cryptography
-                        </a>
-                    </p>
-                </li> 
-                
-  <li class="mb-2 transition-lang" data-lang="high3-item">
-    <strong class="text-xl text-accent">POKE (Encryption)（2025, Eurocrypt）</strong>： Andrea Basso and Luciano Maino Proposed POKÉ (encryption) in higher dimensions.
-    <p class="mt-2">
-      <a href="poke.pdf" class="text-primary hover:underline inline-flex items-center">
-      POKÉ: A Compact and Efficient PKE from Higher-Dimensional Isogenies
-      </a>
-    </p>
-  </li>
-
-                <li class="mb-2 transition-lang" data-lang="high4-item">
-                    <strong class="text-xl text-accent">MIKE（2025）</strong>
-                    <p>Damien Robert derived new abelian varieties by leveraging the action of finitely presented torsion-free modules (rank 2) on supersingular elliptic curves (whereas actions of finitely presented projective modules are required for general abelian varieties). This action eliminates the need to transmit image points and, due to its module-based (rather than ideal-based) nature, resists Kuperberg's quantum attacks. Based on this, he constructed the module action-based key exchange protocol MIKE.
-</p>
-                    <p class="mt-2">
-                        <a href="ModuleAction.pdf" class="text-primary hover:underline inline-flex items-center">
-                            <i class="fa fa-file-pdf-o mr-2"></i>
-                              The Module Action For Isogeny Based Cryptography
-                        </a>
-                    </p>
-                </li> 
-            </ol> 
-        </section>  
         
         <!-- Abel簇问题部分 --> 
         <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
             <h2 class="text-3xl font-bold text-primary mb-6 transition-lang" data-lang="abel-title">Mathematical Problems and Algorithms Related to Cryptography on Abelian Varieties</h2>
             <ol class="list-decimal list-inside text-gray-700 leading-relaxed space-y-6">
                 <li class="mb-2 transition-lang" data-lang="abel1-item"> 
-                    <strong class="text-xl text-accent">Determine Whether the Image Curve of a High-dimensional Isogeny is a Product of Elliptic Curves(2024)</strong>
+                    <strong class="text-xl text-accent">Determine Whether the Image Curve of a High-Dimensional Isogeny Is a Product of Elliptic Curves(2024)</strong>
                     <p> Maria Corte-Real Santos, Craig Costello and Sam Frengley presented an algorithm for determining whether a high - dimensional isogeny image curve is a product of elliptic curves or the Jacobian of a hyperelliptic curve.
   </p>
                     <p class="mt-2">
@@ -145,17 +57,27 @@
                     </p>
                 </li> 
                 <li class="mb-2 transition-lang" data-lang="abel2-item"> 
-                    <strong class="text-xl text-accent">KLPT\\(^2\\) (2025)</strong>
-                    <p> Wouter Castryck, Thomas Decru, Peter Kutas, Abel Laval, Christophe Petit, and Yan Bo Ti proposed a two-dimensional KLPT algorithm, which obtains a method for finding equivalent ideals by computing matrices in high-dimension.
+                    <strong class="text-xl text-accent"><math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> (2025, CRYPTO)</strong>
+                    <p> Wouter Castryck, Thomas Decru, Peter Kutas, Abel Laval, Christophe Petit, and Yan Bo Ti proposed a two-dimensional <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> algorithm, which obtains a method for finding equivalent ideals by computing matrices in high-dimension.
   </p>
                     
                     <p class="mt-2">
-                        <a href="KLPT.pdf" class="text-primary hover:underline inline-flex items-center">
+                        <a href="KLPTC.pdf" class="text-primary hover:underline">
                             <i class="fa fa-file-pdf-o mr-2"></i>
-                          KLPT\\(^2\\):Algebraic Path-finding in Dimension Two and Applications                  
+                          <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math>: Algebraic Pathfinding in Dimension Two and Applications                  
                         </a>
                     </p>
                 </li> 
+                <li class="mb-2 transition-lang" data-lang="abel-module-conversion">
+                    <strong class="text-xl text-accent">Improving the <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> Degree Bound via Module Representations (2026, CRYPTO)</strong>
+                    <p>Aurel Page, Damien Robert and Julien Soumier used conversions between module representations of higher-dimensional supersingular isogenies to improve <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math>. Under the same heuristic assumptions, they reduced the bound on the polarized degree of the output isogeny from <math><mi>O</mi><mo>(</mo><msup><mi>p</mi><mn>25</mn></msup><mo>)</mo></math> to <math><mi>O</mi><mo>(</mo><msup><mi>p</mi><mn>15.5</mn></msup><mo>)</mo></math>.</p>
+                    <p class="mt-2"><a href="978-3-032-35398-6_14.pdf">On the Conversion of Module Representations for Higher Dimensional Supersingular Isogenies</a></p>
+                </li>
+                <li class="mb-2 transition-lang" data-lang="abel-rm-klpt">
+                    <strong class="text-xl text-accent">RM-KLPT (2026, Preprint)</strong>
+                    <p>Mingjie Chen, Thomas Decru, Péter Kutas, Mickaël Montessinos, Sebastian A. Spindler and Nicolas Swanson developed RM-KLPT for superspecial abelian surfaces with maximal real multiplication. The algorithm solves the algebraic pathfinding problem in their isogeny graphs by solving a norm equation in a quaternion ideal over a real quadratic field.</p>
+                    <p class="mt-2"><a href="rm-klpt.pdf">RM-KLPT: Algebraic Pathfinding for Superspecial Abelian Surfaces with Maximal Real Multiplication</a></p>
+                </li>
             </ol> 
         </section>
         
@@ -175,7 +97,7 @@
                 </li>
                 
                 <li class="mb-2 transition-lang" data-lang="graph2">
-                    <strong class="text-xl text-accent">High-dimensional Isogeny Graph (2021)</strong>
+                    <strong class="text-xl text-accent">High-Dimensional Isogeny Graph (2021)</strong>
                     <p>Bruce W. Joran and Yevgeny Zaytman provided the definition of high-dimensional isogeny graphs. They proved that high-dimensional isogeny graphs are connected by strong approximation, though the isogeny graphs are not necessarily Ramanujan graphs.</p>
                     <p class="mt-2">
                         <a href="Richelot1.pdf" class="text-primary hover:underline inline-flex items-center">
@@ -212,11 +134,16 @@
                         </a> 
                     </p>
                 </li>
+                <li class="mb-2 transition-lang" data-lang="graph5">
+                    <strong class="text-xl text-accent">Expansion in Superspecial Isogeny Digraphs with Level Structure (2026, CRYPTO)</strong>
+                    <p>Thomas Decru and Krijn Reijnders studied expansion in the directed graphs obtained by restricting isogeny paths to good extensions. For (2,2)-isogeny graphs, they gave heuristic evidence that the resulting digraphs approach the weak Ramanujan bound.</p>
+                    <p class="mt-2"><a href="978-3-032-35398-6_16.pdf">Expander Properties of Superspecial Isogeny Digraphs with Level Structure</a></p>
+                </li>
             </ol>
         </section>
     </main>
     
-    <footer class="bg-dark text-white py-12">
+    <footer class="shoreline">
         <div class="container mx-auto px-6 md:px-10">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
@@ -239,46 +166,9 @@
         // 翻译数据（中英文对照）
         const translations = {
             'zh-CN': {
-                'title': 'Abel簇(仍在更新)',
+                'title': 'Abel簇',
                 'intro-title': 'Abel簇',
                 'intro-content': '目前同源密码的研究大部分转移到Abel簇上, Abel簇上的技术成为了同源密码的热点问题.',
-                'high-title': '高维同源密码',
-  'high1-item': `
-    <strong class="text-xl text-accent">CDS-Hash 函数（2020年, J. Math. Cryptol）</strong>：  Wouter Castryck、Thomas Decru 和 Benjamin Smith 提出了利用二维Abel 簇构造新的Hash 函数.
-    <p class="mt-2">
-      <a href="g2.pdf" class="text-primary hover:underline inline-flex items-center">
-        Hash Functions From Superspecial Genus-2 &nbsp Curves Using Richelot Isogenies
-      </a>
-    </p>
-  `,
-
-  'high2-item': `
-    <strong class="text-xl text-accent">二维SIDH（2019年, PQC）</strong>： E.V.Flynn 和 YanBo Ti 提出了二维上的SIDH.
-    <p class="mt-2">
-      <a href="g1.pdf" class="text-primary hover:underline inline-flex items-center">
-        Genus Two Isogeny Cryptography
-      </a>
-    </p>
-  `,
-
-   'high3-item': `
-    <strong class="text-xl text-accent">POKE 加密（2025年, 欧密）</strong>： Andrea Basso 和 Luciano Maino 提出了高维上的POKE加密.
-    <p class="mt-2">
-      <a href="poke.pdf" class="text-primary hover:underline inline-flex items-center">
-      POKÉ: A Compact and Efficient PKE from Higher-Dimensional Isogenies
-      </a>
-    </p>
-  `,
-
-  'high4-item': `
-    <strong class="text-xl text-accent">MIKE（2025年, Preprint）</strong>：Damien Robert 通过有限表出无挠模(秩2)在超奇异椭圆曲线上的作用(一般Abel簇上需要有限表出投射模的作用), 得到新的Abel簇, 这个作用无需传输像点, 且因为是模作用而不是理想作用可以抵抗Kuperberg的量子攻击. 由此构造基于模作用的密钥交换MIKE.
-    <p class="mt-2">
-      <a href="ModuleAction.pdf" class="text-primary hover:underline inline-flex items-center">
-        The Module Action for Isogeny Based Cryptography
-      </a>
-    </p>
-  `,
-
   'abel-title':'Abel簇上和密码相关的数学问题和算法',
 
   'abel1-item': `
@@ -291,15 +181,25 @@
   `,
 
   'abel2-item': `
-    <strong class="text-xl text-accent">高维KLPT(2025年, 美密)</strong>： 
-    Wouter Castryck、Thomas Decru、Peter Kutas、Abel Laval、Christophe Petit 和 Yan Bo Ti 提出了二维的KLPT算法, 通过计算高维上的矩阵得到寻找等价理想的办法.
+    <strong class="text-xl text-accent">高维 <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math>（2025 年，美密）</strong>： 
+    Wouter Castryck、Thomas Decru、Peter Kutas、Abel Laval、Christophe Petit 和 Yan Bo Ti 提出了二维的 <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> 算法, 通过计算高维上的矩阵得到寻找等价理想的办法.
     <p class="mt-2">
-      <a href="KLPT.pdf" class="text-primary hover:underline inline-flex items-center">
-        (KLPT\\^2\\):Algebraic Path-finding in Dimension Two and Applications
+      <a href="KLPTC.pdf" class="text-primary hover:underline">
+        <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math>: Algebraic Pathfinding in Dimension Two and Applications
       </a>
     </p>
   `,
 
+  'abel-module-conversion': `
+    <strong class="text-xl text-accent">利用模表示改进 <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> 的次数界（2026 年，美密）</strong>
+    <p>Aurel Page、Damien Robert 和 Julien Soumier 利用高维超奇异同源的模表示转换，在沿用 <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> 启发式假设的条件下，将其输出同源的极化次数上界从 <math><mi>O</mi><mo>(</mo><msup><mi>p</mi><mn>25</mn></msup><mo>)</mo></math> 降至 <math><mi>O</mi><mo>(</mo><msup><mi>p</mi><mn>15.5</mn></msup><mo>)</mo></math>。</p>
+    <p class="mt-2"><a href="978-3-032-35398-6_14.pdf">On the Conversion of Module Representations for Higher Dimensional Supersingular Isogenies</a></p>
+  `,
+  'abel-rm-klpt': `
+    <strong class="text-xl text-accent">极大实乘情形下的 RM-KLPT（2026 年，预印本）</strong>
+    <p>Mingjie Chen、Thomas Decru、Péter Kutas、Mickaël Montessinos、Sebastian A. Spindler 和 Nicolas Swanson 针对具有极大实乘的超特殊 Abel 曲面提出了 RM-KLPT 算法。该算法通过求解实二次域上四元数代数的理想中的范数方程，解决相应同源图中的代数寻路问题。</p>
+    <p class="mt-2"><a href="rm-klpt.pdf">RM-KLPT: Algebraic Pathfinding for Superspecial Abelian Surfaces with Maximal Real Multiplication</a></p>
+  `,
    'graph-title':'Abel簇同源图',
   'graph1': `
     <strong class="text-xl text-accent">二维的Richelot 同源图(2020年, ANTS)</strong>： Toshiyuki. Katsura 和 Katsuyuki. Takashima 给出了二维的Richelot 同源图, 通过约化自同构群是否含有长二阶元判断(2,2)-同源的像曲线是椭圆曲线的乘积还是超椭圆曲线的雅可比簇, 并给出了其相应的个数.
@@ -345,6 +245,11 @@
 
 
 
+  'graph5': `
+    <strong class="text-xl text-accent">超特殊同源有向图的扩张性（2026 年，美密）</strong>
+    <p>Thomas Decru 和 Krijn Reijnders 研究了将同源路径限制为良扩张后所得有向图的扩张性。对于 (2,2)-同源图，他们给出了此同源图趋于弱 Ramanujan 图的启发式证据。</p>
+    <p class="mt-2"><a href="978-3-032-35398-6_16.pdf">Expander Properties of Superspecial Isogeny Digraphs with Level Structure</a></p>
+  `,
                 'footer-title': 'Abel 簇',
                 'footer-desc': '本页面介绍了Abel簇上的高维同源的数学问题及在密码学中的设计，旨在为相关领域的研究人员提供参考。',
                 'copyright': '版权所有 &copy; 2025 Abel簇介绍'
@@ -353,47 +258,9 @@
                 'title': 'Abelian Varieties',
                 'intro-title': 'Abelian Varieties',
                 'intro-content': '<div class="mb-6">  Recently, the focus of research in isogeny-based cryptography has largely moved to abelian varieties, and techniques related to Abelian varieties have become a hot issue in isogeny-based cryptography.</div>', 
-                'high-title': 'High-dimensional Isogeny-based Cryptography',
-'high1-item': `
-    <strong class="text-xl text-accent">CDS-Hash Function (2020, J. Math. Cryptol)</strong>: Wouter Castryck, Thomas Decru and Benjamin Smith proposed a new hash function constructed using two-dimensional Abelian varieties.
-    <p class="mt-2">
-      <a href="g2.pdf" class="text-primary hover:underline inline-flex items-center">
-        Hash Functions From Superspecial Genus-2 Curves Using Richelot Isogenies
-      </a>
-    </p>
-  `,
-
-  'high2-item': `
-    <strong class="text-xl text-accent">Two-dimensional SIDH (2019, PQC)</strong>: E. V. Flynn and Yan Bo Ti proposed two-dimensional SIDH.
-    <p class="mt-2">
-      <a href="g1.pdf" class="text-primary hover:underline inline-flex items-center">
-        Genus Two Isogeny Cryptography
-      </a>
-    </p>
-  `,
-
-
-  'high3-item': `
-    <strong class="text-xl text-accent">POKE (Encryption)（2025, Eurocrypt）</strong>： Andrea Basso and Luciano Maino Proposed POKÉ (encryption) in higher dimensions.
-    <p class="mt-2">
-      <a href="poke.pdf" class="text-primary hover:underline inline-flex items-center">
-      POKÉ: A Compact and Efficient PKE from Higher-Dimensional Isogenies
-      </a>
-    </p>
-  `,
-
-  'high4-item': `
-    <strong class="text-xl text-accent">MIKE (2025, Preprint)</strong>: Damien Robert derived new abelian varieties by leveraging the action of finitely presented torsion-free modules (rank 2) on supersingular elliptic curves. This module action resists Kuperberg's quantum attacks and eliminates the need to transmit image points. Based on this, he constructed the MIKE key exchange protocol.
-    <p class="mt-2">
-      <a href="ModuleAction.pdf" class="text-primary hover:underline inline-flex items-center">
-        The Module Action for Isogeny Based Cryptography
-      </a>
-    </p>
-  `,
-
    'abel-title':'Mathematical Problems and Algorithms Related to Cryptography on Abelian Varieties',
     'abel1-item': ` 
-   <strong class="text-xl text-accent">Determine Whether the Image Curve of a High-dimensional Isogeny is a Product of Elliptic Curves(2024, PKC)</strong>
+   <strong class="text-xl text-accent">Determine Whether the Image Curve of a High-Dimensional Isogeny Is a Product of Elliptic Curves(2024, PKC)</strong>
                     <p> Maria Corte-Real Santos, Craig Costello and Sam Frengley presented an algorithm for determining whether the image of high-dimensional isogeny is a product of elliptic curves.
   </p>
                     <p class="mt-2">
@@ -406,16 +273,26 @@
                     </p>
                     `,
           'abel2-item': `       
-                    <strong class="text-xl text-accent"> KLPT\\(^2\\) (2025, Crypto)</strong>
-                    <p> Wouter Castryck, Thomas Decru, Peter Kutas, Abel Laval, Christophe Petit and Yan Bo Ti proposed a two-dimensional KLPT algorithm, which obtains a method for finding equivalent ideals by computing matrices in high-dimension.
+                    <strong class="text-xl text-accent"><math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> (2025, CRYPTO)</strong>
+                    <p> Wouter Castryck, Thomas Decru, Peter Kutas, Abel Laval, Christophe Petit and Yan Bo Ti proposed a two-dimensional <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> algorithm, which obtains a method for finding equivalent ideals by computing matrices in high-dimension.
   </p>
                     
                     <p class="mt-2">
-                        <a href="KLPT.pdf" class="text-primary hover:underline inline-flex items-center">
+                        <a href="KLPTC.pdf" class="text-primary hover:underline">
                             <i class="fa fa-file-pdf-o mr-2"></i>
-                          \\(KLPT^2\\):Algebraic Path-finding in Dimension Two and Applications                  
+                          <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math>: Algebraic Pathfinding in Dimension Two and Applications                  
                         </a>
                     </p>
+  `,
+  'abel-module-conversion': `
+    <strong class="text-xl text-accent">Improving the <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math> Degree Bound via Module Representations (2026, CRYPTO)</strong>
+    <p>Aurel Page, Damien Robert and Julien Soumier used conversions between module representations of higher-dimensional supersingular isogenies to improve <math><msup><mi mathvariant="normal">KLPT</mi><mn>2</mn></msup></math>. Under the same heuristic assumptions, they reduced the bound on the polarized degree of the output isogeny from <math><mi>O</mi><mo>(</mo><msup><mi>p</mi><mn>25</mn></msup><mo>)</mo></math> to <math><mi>O</mi><mo>(</mo><msup><mi>p</mi><mn>15.5</mn></msup><mo>)</mo></math>.</p>
+    <p class="mt-2"><a href="978-3-032-35398-6_14.pdf">On the Conversion of Module Representations for Higher Dimensional Supersingular Isogenies</a></p>
+  `,
+  'abel-rm-klpt': `
+    <strong class="text-xl text-accent">RM-KLPT (2026, Preprint)</strong>
+    <p>Mingjie Chen, Thomas Decru, Péter Kutas, Mickaël Montessinos, Sebastian A. Spindler and Nicolas Swanson developed RM-KLPT for superspecial abelian surfaces with maximal real multiplication. The algorithm solves the algebraic pathfinding problem in their isogeny graphs by solving a norm equation in a quaternion ideal over a real quadratic field.</p>
+    <p class="mt-2"><a href="rm-klpt.pdf">RM-KLPT: Algebraic Pathfinding for Superspecial Abelian Surfaces with Maximal Real Multiplication</a></p>
   `,
   'graph-title':'Isogeny Graph of Abelian Varieties',
   'graph1': `
@@ -428,7 +305,7 @@
   `,
 
   'graph2': `
-    <strong class="text-xl text-accent">High-dimensional Isogeny Graph (2023, Canadian Journal of Mathematics)</strong>: Bruce W. Joran and Yevgeny Zaytman defined high-dimensional isogeny graphs and proved the graph is connected by strong approximation.
+    <strong class="text-xl text-accent">High-Dimensional Isogeny Graph (2023, Canadian Journal of Mathematics)</strong>: Bruce W. Joran and Yevgeny Zaytman defined high-dimensional isogeny graphs and proved the graph is connected by strong approximation.
     <p class="mt-2">
       <a href="Richelot1.pdf" class="text-primary hover:underline inline-flex items-center">
         Isogeny Graphs of Superspecial Abelian Varieties and Brandt Matrices
@@ -461,6 +338,11 @@
                     </p>
                      `,
 
+  'graph5': `
+    <strong class="text-xl text-accent">Expansion in Superspecial Isogeny Digraphs with Level Structure (2026, CRYPTO)</strong>
+    <p>Thomas Decru and Krijn Reijnders studied expansion in the directed graphs obtained by restricting isogeny paths to good extensions. For (2,2)-isogeny graphs, they gave heuristic evidence that the resulting digraphs approach the weak Ramanujan bound.</p>
+    <p class="mt-2"><a href="978-3-032-35398-6_16.pdf">Expander Properties of Superspecial Isogeny Digraphs with Level Structure</a></p>
+  `,
                 'footer-title': 'Abelian Varieties',
                 'footer-desc': 'This page introduces the mathmatics problem of abelian varieties and application of abelian varieties isogenies in cryptography, aiming to provide references for researchers in related fields.',
                 'copyright': 'Copyright &copy; 2025 Abelian Varieties'
@@ -509,7 +391,7 @@
                             element.innerHTML = translations[lang][key];
                         }
                         // 重新渲染MathJax公式
-                        MathJax.typesetPromise([element]).catch(err => console.error('MathJax error:', err));
+                        window.MathJax?.typesetPromise?.([element]).catch(err => console.error('MathJax error:', err));
                     });
                     
                     // 恢复元素可见性
