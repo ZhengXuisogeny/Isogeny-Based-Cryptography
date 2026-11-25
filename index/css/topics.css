@@ -112,7 +112,7 @@ footer { padding: 1.5rem 0 2.5rem; border-top: 1px solid var(--rule); color: var
 footer h3 { margin-bottom: .4rem; }
 footer [data-lang="copyright"] { margin-top: .9rem; font: .9rem var(--ui); }
 
-/* Put the club illustrations into two small galleries beneath the notes. */
+/* Keep the reading column first on narrow screens. */
 .main-content { display: flex; flex-direction: column; }
 .center-column { order: -1; }
 .main-content :is(.left-column, .right-column) {
@@ -130,6 +130,24 @@ footer [data-lang="copyright"] { margin-top: .9rem; font: .9rem var(--ui); }
 .center-column ul p:first-child, .center-column ul br + p { color: var(--moss); font-weight: 700; }
 .center-column ul br + p { border-top: 1px solid var(--rule); padding-top: .8rem; }
 .center-column ul img { display: block; max-width: min(100%, 18rem); }
+@media screen and (min-width: 60rem) {
+    .main-content {
+        display: grid;
+        max-width: 82rem;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+        grid-template-areas: "left notes right";
+        gap: clamp(1.25rem, 2.6vw, 2.75rem);
+        align-items: start;
+    }
+    .center-column { grid-area: notes; }
+    .main-content .left-column { grid-area: left; }
+    .main-content .right-column { grid-area: right; }
+    .main-content :is(.left-column, .right-column) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        padding-top: 2.6rem;
+    }
+}
 @media (max-width: 520px) {
     body { font-size: 1.03rem; }
     body > header, body > nav { padding-top: 4.1rem; }

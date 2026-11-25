@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-landscape="maple">
+<html lang="en" data-landscape="snow">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <title>Introduction to Isogeny-Based Cryptography</title>
+    <title>SQIsign (Short Quaternion Isogeny Signature)</title>
 
-    <link rel="stylesheet" href="css/academic.css">
+    <link rel="stylesheet" href="css/academic.css?v=snow-1">
 </head>
 
 <body class="bg-light font-sans text-dark">
@@ -35,7 +35,7 @@
         <!-- 概述部分 -->
         <section class="mb-12 bg-white rounded-xl shadow-lg p-8 card-hover">
             <p class="text-gray-700 leading-relaxed text-balance transition-lang" data-lang="intro-content">
-        Isogeny-based cryptography is a type of cryptographic technique that relies on elliptic curve isogenies and offers the advantage of short sizes.
+        SQIsign is an isogeny-based signature scheme in the third round of the NIST additional digital signature process.
             </p> 
         </section>
         
@@ -56,7 +56,7 @@
                 
                 <li class="mb-2 transition-lang" data-lang="sqi2">
                     <strong class="text-xl text-accent">SQIsign (2020)</strong>
-                    <p>Luca De Feo, David Kohel, Antonin Leroux, Christophe Petit, and Benjamin Wesolowski proposed SQIsign, a signature scheme based on quaternion algebras. It has the shortest public key and signature sizes among NIST's post-quantum signature candidates. It primarily uses the Sigma protocol and the KLPT algorithm for finding equivalent ideals.</p>
+                    <p>Luca De Feo, David Kohel, Antonin Leroux, Christophe Petit, and Benjamin Wesolowski proposed SQIsign, a signature scheme based on quaternion algebras. It primarily uses the Sigma protocol and the KLPT algorithm for finding equivalent ideals.</p>
                     <p class="mt-2">
                         <a href="SQISign.pdf" class="text-primary hover:underline inline-flex items-center">
                             <i class="fa fa-file-pdf-o mr-2"></i>
@@ -254,7 +254,7 @@
                 'title': 'SQIsign (短四元数代数签名)',
                 
                 'intro-title': 'SQIsign (短四元数代数签名)',
-                'intro-content': 'SQIsign是新出现的具有最紧凑尺寸的一类签名。',
+                'intro-content': 'SQIsign 是基于同源的数字签名方案，已进入 NIST 补充数字签名遴选第三轮。',
                 
  
 
@@ -273,7 +273,7 @@
 
   'sqi2': `
     <strong class="text-xl text-accent">SQIsign的提出（2020年, 亚密）</strong>
-    <p>Luca De Feo、David Kohel、Antonin Leroux、Christophe Petit 和 Benjamin Wesolowski 提出了基于四元数代数的 SQIsign 签名方案。其公钥和签名尺寸是 NIST 征集的所有候选签名中最短的，主要基于 Sigma 协议与 KLPT 算法来寻找等价理想。</p>
+    <p>Luca De Feo、David Kohel、Antonin Leroux、Christophe Petit 和 Benjamin Wesolowski 提出了基于四元数代数的 SQIsign 签名方案。该方案主要基于 Sigma 协议与 KLPT 算法来寻找等价理想。</p>
     <p class="mt-2">
       <a href="SQISign.pdf" class="text-primary hover:underline inline-flex items-center">
         <i class="fa fa-file-pdf-o mr-2"></i>
@@ -298,7 +298,7 @@
 
   'sqi4': `
     <strong class="text-xl text-accent">总结</strong>
-    <p>SQIsign 已进入 NIST 补充数字签名遴选第三轮。在所有候选方案中，SQIsign 的公钥与签名合计尺寸最小。</p>
+    <p>SQIsign 已进入 NIST 补充数字签名遴选第三轮。在所有候选方案中，SQIsign 的公钥与签名的合计尺寸最为紧凑。</p>
   `,
    'sqihd-title':'SQIsign的优化',
   'sqihd1': `
@@ -441,7 +441,7 @@
                 'title': 'SQIsign (Short Quaternion Isogeny Signature)',
                 
                 'intro-title': 'SQIsign (Short Quaternion Isogeny Signature)',
-                'intro-content': '<div class="mb-6"> SQIsign is a class of signature with the most compact size.</div>', 
+                'intro-content': 'SQIsign is an isogeny-based signature scheme in the third round of the NIST additional digital signature process.', 
                 
                 'sqi-title': 'SQIsign',
 
@@ -458,7 +458,7 @@
 
   'sqi2': `
     <strong class="text-xl text-accent">SQIsign (2020, ASIACRYPT)</strong>
-    <p>Luca De Feo, David Kohel, Antonin Leroux, Christophe Petit and Benjamin Wesolowski proposed SQIsign, a signature scheme based on quaternion algebras. It has the shortest public key and signature sizes among NIST's post-quantum signature candidates. It primarily uses the Sigma protocol and the KLPT algorithm for finding equivalent ideals.</p>
+    <p>Luca De Feo, David Kohel, Antonin Leroux, Christophe Petit and Benjamin Wesolowski proposed SQIsign, a signature scheme based on quaternion algebras. It primarily uses the Sigma protocol and the KLPT algorithm for finding equivalent ideals.</p>
     <p class="mt-2">
       <a href="SQISign.pdf" class="text-primary hover:underline inline-flex items-center">
         <i class="fa fa-file-pdf-o mr-2"></i>

@@ -41,6 +41,15 @@
     --crop: 50%;
     --footer-crop: 60%;
 }
+:root[data-landscape="snow"] {
+    --canvas: #f7f9fc;
+    --heading: #3c4c68;
+    --link: #364f77;
+    --landscape: url("../images/sqisign-snow.jpg");
+    --shade: linear-gradient(90deg, #101c35c9, #18203833 65%, #172039a6);
+    --crop: 30%;
+    --footer-crop: 60%;
+}
 :root[data-landscape="violet"] {
     --canvas: #fbf9fd;
     --heading: #674d82;
