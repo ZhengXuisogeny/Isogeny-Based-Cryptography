@@ -17,144 +17,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>徐铮 (Zheng Xu) - 个人主页 | 同源密码 (Isogeny-Based-Cryptography)</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            gap: 20px;
-            background-color: #f9f9f9; /* 改为浅灰色背景 */
-            margin: 0;
-            padding: 20px;
-            justify-content: center; /* 居中布局 */
-        }
-
-        /* 三列布局容器 */
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: 1400px; /* 最大宽度限制 */
-            gap: 20px;
-        }
-
-        .left-column {
-            width: 300px;
-            text-align: center;
-            flex-shrink: 0; /* 防止左侧栏被压缩 */
-            background-color: #ffffff; /* 改为白色背景 */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影 */
-        }
-
-        .main-column {
-            flex: 0 0 800px; /* A4纸宽度约800px */
-            background-color: #ffffff; /* 改为白色背景 */
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影 */
-        }
-
-        .right-blank {
-            flex: 1; /* 空白区域 */
-        }
-
-        .left-column img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-        }
-
-        .lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-        }
-
-        .lang-switch:hover {
-            background-color: #45a049;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        a {
-            color: #1e40af;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-
-        h2 {
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            color: #444;
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-
-        /* Links区域样式 */
-        .links-section {
-            margin-top: 30px;
-            text-align: left;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-        }
-        .links-section h3 {
-            font-size: 1.2em;
-            margin-top: 0;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 8px;
-            color: #333;
-        }
-        .links-section ul {
-            padding-left: 20px;
-            margin: 10px 0 0 0;
-        }
-        .links-section li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-        .links-section li span {
-            margin-right: 6px;
-        }
-
-        /* 移动端适配 */
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .left-column, .main-column {
-                width: 100%;
-                max-width: 100%;
-                flex: none;
-            }
-            .right-blank {
-                display: none;
-            }
-            .lang-switch {
-                position: static;
-                margin-bottom: 15px;
-            }
-        }
-    </style>
+:root{--ink:#142d41;--muted:#5b6e7d;--blue:#176b88;--line:#dce5eb;--nav:#102e43;--paper:#fff}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:#f3f6f8;color:var(--ink);font:16px/1.75 'Segoe UI','Microsoft YaHei',sans-serif}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:4px}a:focus-visible,button:focus-visible{outline:3px solid #dcaa52;outline-offset:5px}p{margin:8px 0}button{font:inherit}.site-header{height:78px;max-width:1360px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 36px;gap:24px}.brand{font-family:Georgia,serif;font-size:24px;color:var(--ink);font-weight:bold}.header-actions{display:flex;align-items:center;gap:30px}.header-actions a{color:var(--muted);font-size:14px}.lang-switch{background:white;border:1px solid #cbd7df;padding:6px 18px;border-radius:6px;color:var(--ink);cursor:pointer}.lang-switch:hover{background:#e9f0f4}.container{max-width:1288px;margin:12px auto 64px;display:grid;grid-template-columns:264px minmax(0,1fr);gap:42px;padding:0 20px;align-items:start}.left-column{background:var(--nav);color:#d9e6ed;padding:30px 24px;border-radius:10px;font-size:14px;overflow-wrap:anywhere}.left-column h2{border:0;color:white;font:26px/1.3 Georgia,serif;margin:0 0 14px;padding:0}.left-column>p{margin:0}.left-column>p[data-lang=email]{color:#a8c1d0;font-size:13px;margin-bottom:18px}.left-column>p a{display:block;padding:11px 12px;margin:3px -12px;border-radius:5px;color:#edf5fa;font-size:15px}.left-column>p a:hover{background:#23465c;text-decoration:none}.left-column>p:nth-of-type(2){border-bottom:1px solid #365266;padding-bottom:16px;margin-bottom:16px}.links-section{margin-top:30px;border-top:1px solid #365266;padding-top:24px}.links-section h3{font-size:14px;text-transform:uppercase;letter-spacing:2px;color:#95b6c9;margin:0 0 18px}.links-section ul{padding:0;list-style:none;margin:0}.links-section li{margin:0 0 18px;line-height:1.65}.links-section a{color:#c8dbe6}.links-section li>span{display:none}.links-section li:last-child{border-top:1px solid #365266;padding-top:20px}.main-column{min-width:0;background:white;border:1px solid var(--line);border-radius:10px;padding:0 42px 36px;overflow:hidden}.right-blank{display:none}.profile-header{display:flex;align-items:center;gap:28px;padding:42px 0 36px;border-bottom:1px solid var(--line)}.profile-header>div:first-child{flex:1;min-width:0}.eyebrow{font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin:0 0 16px}h1{font:normal clamp(30px,3.3vw,47px)/1.2 Georgia,'Microsoft YaHei',serif;letter-spacing:-1.3px;margin:0 0 18px}.profile-title{font-size:17px;line-height:1.65;margin-bottom:20px;max-width:410px}.profile-contact{font-size:14px;color:var(--muted);overflow-wrap:anywhere}.profile-photo-container{width:178px;height:210px;flex-shrink:0;overflow:hidden;border-radius:6px;background:#edf2f5}.profile-photo{width:100%;height:100%;object-fit:cover;object-position:center}.photo-placeholder{height:100%;font-size:14px;color:var(--muted);align-items:center;justify-content:center}.section-nav{display:flex;gap:22px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:16px 0}.section-nav a{font-size:14px;color:var(--muted)}h2{font:normal 29px/1.35 Georgia,'Microsoft YaHei',serif;margin:38px 0 20px;padding-bottom:13px;border-bottom:1px solid var(--line)}h3{font-size:16px;margin:24px 0 14px;color:var(--muted);font-weight:600}.main-column>ul{list-style:none;padding:0;margin:0}.main-column>ul>li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px solid #edf1f4}.main-column>ul>li:last-child{margin-bottom:0}.main-column p[data-lang^=date]{font-size:13px;color:var(--blue);font-weight:600;letter-spacing:.3px}.main-column p[data-lang$=institution]{font-weight:600;line-height:1.6}.main-column p[data-lang$=position],.main-column p[data-lang$=degree]{font-size:14px;color:var(--muted)}.main-column>ul.timeline>li{position:relative;padding-left:23px;border-left:1px solid #c9dae3;border-bottom:0;margin-bottom:0;padding-bottom:22px}.timeline>li:before{content:'';position:absolute;left:-4px;top:10px;width:7px;height:7px;border-radius:50%;background:var(--blue)}.main-column>ul.research-list{background:#f2f7fa;padding:22px 25px;border-left:3px solid #39809b;border-radius:0 6px 6px 0}.main-column>ul.research-list>li{font-size:17px;font-weight:600;border:0;padding:0;margin:12px 0 6px}.research-list p{font-size:15px;color:var(--muted);margin:6px 0 12px}.main-column>ul.publication-list>li{padding:18px 0;margin:0}.publication-list p{font-size:15px;line-height:1.85}.publication-list a{font-weight:600}.publication-list em{font-style:normal}.site-footer{max-width:1288px;padding:0 20px 30px;margin:auto;color:var(--muted);font-size:13px;display:flex;justify-content:space-between}mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(min-width:1400px){.container{gap:48px}.main-column{padding-left:48px;padding-right:48px}}
+@media(max-width:1000px){.container{grid-template-columns:220px minmax(0,1fr);gap:22px}.main-column{padding:0 26px 30px}.left-column{padding:26px 20px}.profile-photo-container{width:130px;height:165px}.profile-header{gap:20px}.header-actions{gap:18px}}
+@media(max-width:760px){.site-header{height:68px;padding:0 20px}.header-actions>a{display:none}.container{display:flex;flex-direction:column;margin-top:8px;gap:24px;padding:0 16px}.main-column{order:0;width:100%;padding:0 24px 28px}.left-column{order:1;width:100%}.profile-header{padding-top:30px;gap:18px}.profile-photo-container{width:104px;height:136px}h1{font-size:32px}.profile-title{font-size:15px}.eyebrow{font-size:11px;letter-spacing:1.4px}.section-nav{gap:12px 22px}.left-column>p a{display:inline-block}.links-section li:last-child{line-height:2}.site-footer{padding:0 20px 24px}h2{font-size:26px}}
+@media(max-width:420px){.profile-header{flex-wrap:wrap;align-items:flex-start}.profile-header>div:first-child{flex-basis:100%}.profile-photo-container{width:112px;height:132px}.main-column{padding-left:20px;padding-right:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{body{background:white}.site-header,.left-column,.section-nav,.site-footer{display:none}.container{display:block;margin:0;padding:0}.main-column{border:0;padding:0}a{color:inherit}}
+</style>
 </head>
 <body>
-    <button id="langButton" class="lang-switch">中文</button>
+    <header class="site-header" id="top"><a class="brand" href="#top">Zheng Xu<span style="color:#39809b">.</span></a><div class="header-actions"><a href="#research" data-lang="research">Research Interests</a><a href="#publications" data-lang="nav-publications">Publications</a><button id="langButton" class="lang-switch" type="button" aria-label="Switch language / 切换语言">中文</button></div></header>
     
     <div class="container">
         <div class="left-column">
@@ -226,9 +99,9 @@
         </div>
         
         <div class="main-column"> 
-   <div class="profile-header" style="display: flex; align-items: center; gap: 30px; padding-bottom: 20px; border-bottom: 2px solid #e0e0e0;">
+   <div class="profile-header">
     <div style="flex: 1;">
-        <div class="profile-info">
+        <div class="profile-info"><p class="eyebrow">Mathematics &amp; Cryptography</p>
             <h1 data-lang="name">Zheng Xu (徐铮)</h1>
             <p class="profile-title" data-lang="title">Assistant Researcher, Hefei National Laboratory </p>
             <p class="profile-contact" data-lang="email">Email: xuzheng1@mal.ustc.edu.cn</p>
@@ -236,15 +109,15 @@
         </div>
     </div>
     <!-- 拉宽照片容器 -->
-    <div class="profile-photo-container" style="width: 300px; height: 250px; border: 1px solid #ddd; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
+    <div class="profile-photo-container">
         <img class="profile-photo" src="index/zhengxu.jpg" alt="Zheng Xu" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="photo-placeholder" style="display: none; flex-direction: column; align-items: center; justify-content: center; color: #666; font-size: 14px;">
             照片位置<br>(200×250px)
         </div>
     </div>
 </div>
-            <h2 data-lang="work-experience">Experience</h2>
-            <ul>
+<nav class="section-nav" aria-label="Page sections"><a href="#experience" data-lang="work-experience">Experience</a><a href="#education" data-lang="education">Education</a><a href="#research" data-lang="research">Research Interests</a><a href="#publications" data-lang="nav-publications">Publications</a><a href="#projects" data-lang="projects">Lead Projects</a></nav><h2 id="experience" data-lang="work-experience">Experience</h2>
+            <ul class="timeline">
                 <li>
                     <p data-lang="date1">Oct 2024-Present</p>
                     <p data-lang="job1-institution">Hefei National Laboratory, University of Science and Technology of China, Quantum Computing Department</p>
@@ -262,8 +135,8 @@
                 </li>
             </ul>
             
-            <h2 data-lang="education">Education</h2>
-            <ul>
+            <h2 id="education" data-lang="education">Education</h2>
+            <ul class="timeline">
                 <li>
                     <p data-lang="date4">Sep 2016-Jun 2021</p> 
                     <p data-lang="edu1-institution">University of Science and Technology of China, School of Mathematical Sciences</p>
@@ -276,8 +149,8 @@
                 </li>
             </ul>
 
-            <h2 data-lang="research">Research Interests</h2>
-            <ul>
+            <h2 id="research" data-lang="research">Research Interests</h2>
+            <ul class="research-list">
                 <li data-lang="research1-title">Computational Number Theory</li>
                 <p data-lang="research1-content1">1. Structure of isogeny graphs, computating isogeny and endomorphism ring problems</p>
                 <p data-lang="research1-content2">2. Generalizations to abelian varieties over finite fields</p>
@@ -286,9 +159,9 @@
                 <p data-lang="research2-content2">2. Isogeny-based post-quantum key exchange: Design, optimization and analysis of module action MIKE2.</p>
             </ul>
      
-            <h2 data-lang="publications">Publications</h2>
+            <h2 id="publications" data-lang="publications">Publications</h2>
             <h3 data-lang="published">Published or Accepted Papers</h3>
-            <ul>
+            <ul class="publication-list">
                 <li>
                     <p data-lang="pub6">Zheng Xu, Kaizhan Lin\\(^∗\\), Chang-An Zhao, Yi Ouyang, <a href="https://doi.org/10.1007/978-981-95-5113-2_11"><em>SQIsign2D\\(^2\\): New SQIsign2D Variant by Leveraging Power Smooth Isogenies in Dimension One</em></a>,  Advances in Cryptology – ASIACRYPT 2025. Lecture Notes in Computer Science, vol 16248. Springer.</p>
                 </li>
@@ -319,7 +192,7 @@
                 </li>
             </ul>
             
-            <h2 data-lang="projects">Lead Projects</h2>
+            <h2 id="projects" data-lang="projects">Lead Projects</h2>
             <ul>
                 <li>
                     <p data-lang="project1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography 'Project Title: The Mathematical Theory of Isogeny-Based Post Quantum Cryptography (NSFC)'</p>
@@ -327,7 +200,7 @@
                 </li>
             </ul>
             
-            <h2 data-lang="projectss">Research Projects</h2>
+            <h2 id="research-projects" data-lang="projectss">Research Projects</h2>
             <ul>
                 <li>
                     <p data-lang="projects1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography (Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province)</p>
@@ -349,6 +222,7 @@
         // 语言数据对象
         const translations = {
             'en': {
+ 'link': 'Links', 'nav-publications': 'Publications',
                 'name': 'Zheng Xu (徐铮)',
                 'location': 'Anhui, China',
                 'email': 'xuzheng1@mail.ustc.edu.cn',
@@ -405,6 +279,7 @@
                 'projects2-time': 'Project Duration: 2021 - 2026'
             },
             'zh-CN': {
+ 'nav-publications': '论文',
                 'name': '徐铮',
                 'title':'合肥国家实验室, 中国科学技术大学',
                 'address':'中国-安徽-合肥-高新区',
@@ -477,30 +352,17 @@
             });
 
             function applyTranslation(lang) {
-                const elements = document.querySelectorAll('[data-lang]');
-                
-                elements.forEach(element => {
-                    element.style.transition = 'opacity 0.3s, transform 0.3s';
-                    element.style.opacity = '0';
-                    element.style.transform = 'translateY(10px)';
-                });
-
-                setTimeout(() => {
-                    elements.forEach(element => {
-                        const key = element.getAttribute('data-lang');
-                        if (translations[lang] && translations[lang][key]) {
-                            element.innerHTML = translations[lang][key];
-                        }
-                        MathJax.typesetPromise([element]).catch(err => console.error('MathJax error:', err));
-                    });
-
-                    elements.forEach(element => {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    });
-                }, 300);
+                const elements = Array.from(document.querySelectorAll('[data-lang]'));
+                const renderer = window.MathJax;
+                renderer?.typesetClear?.(elements);
+                for (const element of elements) {
+                    const text = translations[lang][element.getAttribute('data-lang')];
+                    if (text) element.innerHTML = text;
+                }
+                renderer?.typesetPromise?.(elements).catch(console.error);
             }
         });
     </script>
+<footer class="site-footer"><span>Zheng Xu · Mathematics &amp; Cryptography</span><a href="#top" aria-label="Back to top">Top</a></footer>
 </body>
 </html>
