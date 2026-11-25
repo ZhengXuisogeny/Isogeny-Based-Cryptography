@@ -115,6 +115,27 @@ footer [data-lang="copyright"] { margin-top: .9rem; font: .9rem var(--ui); }
 /* Keep the reading column first on narrow screens. */
 .main-content { display: flex; flex-direction: column; }
 .center-column { order: -1; }
+.club-editions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .65rem;
+    margin: 1.5rem 0;
+}
+.club-editions button {
+    padding: .7rem 1rem;
+    border: 1px solid #a6b9aa;
+    border-radius: .25rem;
+    background: var(--paper);
+    color: var(--moss);
+    font: 600 1.28rem/1.5 var(--ui);
+    cursor: pointer;
+}
+.club-editions button:hover { background: var(--wash); }
+.club-editions button[aria-selected="true"] {
+    border-color: var(--moss);
+    background: var(--moss);
+    color: white;
+}
 .main-content :is(.left-column, .right-column) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
