@@ -34,9 +34,8 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media print{body{background:white}.site-header,.left-column,.section-nav,.site-footer{display:none}.container{display:block;margin:0;padding:0}.main-column{border:0;padding:0}a{color:inherit}}
 
-.talk-list li p:first-child { font-weight: 600; }
+.talk-list li p:first-child, .grants li p:first-child, .patent-list strong { color: var(--blue); font-weight: 600; }
 .author-note, .talk-list li p + p, .grants li p + p { color: var(--muted); font-size: .9rem; }
-.grants li p:first-child { font-weight: 600; }
 .publication-list sup { color: var(--blue); }
 
 .header-actions, .section-nav, .lang-switch, .profile-contact,
@@ -99,7 +98,8 @@
 }
 .home-intro h1 { font-size: clamp(2.5rem, 4.8vw, 4.25rem); line-height: 1.08; }
 .home-intro .eyebrow { font-family: var(--interface); color: #60542b; margin-bottom: .6rem; }
-.home-intro .profile-bio { color: #33362f; }
+.home-intro .profile-bio { color: #33362f; font-size: 1.0625rem; }
+.home-intro .profile-contact { font-size: 1rem; }
 .profile-identity { display: flex; align-items: center; gap: clamp(14px, 2vw, 26px); margin-bottom: 16px; }
 .profile-identity > div:last-child { flex: 1; min-width: 0; container-type: inline-size; }
 .profile-identity h1 { margin-bottom: 0; font-size: min(4.25rem, 12cqi); white-space: nowrap; }
@@ -350,7 +350,7 @@
                     <p><time datetime="2021-04">2021-04</time> · <span data-lang="talk-conf-2021-04-venue">First National Doctoral Forum on Number Theory and Algebraic Geometry, “When Number Theory Meets Algebraic Geometry”, Hefei</span></p></li>
             </ul>
             <h2 id="patents" data-lang="patents">Patents</h2>
-            <ul><li><p data-lang="patent-signature">Zheng Xu, Kaizhan Lin, Yi Ouyang, <strong>Isogeny-based signature method, apparatus, device and medium.</strong> Chinese patent ZL202511947818.9.</p></li>
+            <ul class="patent-list"><li><p data-lang="patent-signature">Zheng Xu, Kaizhan Lin, Yi Ouyang, <strong>Isogeny-based signature method, apparatus, device and medium.</strong> Chinese patent ZL202511947818.9.</p></li>
                 <li><p data-lang="patent-translation">Zheng Xu, Keteng Huang, Yi Ouyang, Guizhen Zhu, <strong>Method, apparatus, device and storage medium for ideal-to-isogeny translation.</strong> Patent application pending.</p></li></ul>
             <h2 id="projects" data-lang="all-projects">Projects</h2>
             <h3 data-lang="projects">Projects as Principal Investigator</h3>
@@ -364,14 +364,14 @@
 </ul>
             
             <h3 id="research-projects" data-lang="projectss">Projects as Participant</h3>
-            <ul>
+            <ul class="grants">
                 <li>
-                    <p data-lang="projects1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography (Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province)</p>
-                    <p data-lang="projects1-time">Project Duration: 2018 - 2022</p>
+                    <p data-lang="projects1-name">Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography</p>
+                    <p data-lang="projects1-time">2018–2022 · Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province</p>
                 </li>
                 <li>
-                    <p data-lang="projects2-name">Project Title: Theoretical and Applied Research on Quantum Algorithms and Post-Quantum Cryptographic Algorithms (Major Project on Quantum Communication and Quantum Computers)</p>
-                    <p data-lang="projects2-time">Project Duration: 2021 - 2026</p>
+                    <p data-lang="projects2-name">Theoretical and Applied Research on Quantum Algorithms and Post-Quantum Cryptographic Algorithms</p>
+                    <p data-lang="projects2-time">2021–2026 · Major Project on Quantum Communication and Quantum Computers</p>
                 </li>
             </ul>
         </div>
@@ -451,10 +451,10 @@
         "project1-name": "Mathematical Theory of Isogeny-Based Post-Quantum Cryptography",
         "project1-time": "2026–2028 · National Natural Science Foundation of China, Young Scientists Fund (Category C)",
         "projectss": "Projects as Participant",
-        "projects1-name": "Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography (Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province)",
-        "projects1-time": "Project Duration: 2018 - 2022",
-        "projects2-name": "Project Title: Theoretical and Applied Research on Quantum Algorithms and Post-Quantum Cryptographic Algorithms (Major Project on Quantum Communication and Quantum Computers)",
-        "projects2-time": "Project Duration: 2021 - 2026",
+        "projects1-name": "Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography",
+        "projects1-time": "2018–2022 · Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province",
+        "projects2-name": "Theoretical and Applied Research on Quantum Algorithms and Post-Quantum Cryptographic Algorithms",
+        "projects2-time": "2021–2026 · Major Project on Quantum Communication and Quantum Computers",
         "research-focus": "Isogeny-Based Post-Quantum Cryptography",
         "corresponding": "* Corresponding author",
         "patents": "Patents",
@@ -534,10 +534,10 @@
         "project1-name": "基于同源的后量子密码的数学理论",
         "project1-time": "2026–2028 · 国家自然科学基金青年科学基金项目（C 类）",
         "projectss": "参与项目",
-        "projects1-name": "项目名称:后量子密码相关数学理论和算法研究(安徽省量子通信与量子计算机重大项目引导性项目)",
-        "projects1-time": "项目时间:2018 - 2022",
-        "projects2-name": "项目名称:量子算法和后量子密码算法的理论和应用研究(量子通信与量子计算机重大项目)",
-        "projects2-time": "项目时间:2021 - 2026",
+        "projects1-name": "后量子密码相关数学理论和算法研究",
+        "projects1-time": "2018–2022 · 安徽省量子通信与量子计算机重大项目引导性项目",
+        "projects2-name": "量子算法和后量子密码算法的理论和应用研究",
+        "projects2-time": "2021–2026 · 量子通信与量子计算机重大项目",
         "research-focus": "基于同源的后量子密码",
         "corresponding": "* 表示通讯作者",
         "patents": "专利",
