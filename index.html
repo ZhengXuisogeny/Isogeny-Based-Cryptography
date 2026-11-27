@@ -34,7 +34,8 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media print{body{background:white}.site-header,.left-column,.section-nav,.site-footer{display:none}.container{display:block;margin:0;padding:0}.main-column{border:0;padding:0}a{color:inherit}}
 
-.author-note, .grants li p + p { color: var(--muted); font-size: .9rem; }
+.talk-list li p:first-child { font-weight: 600; }
+.author-note, .talk-list li p + p, .grants li p + p { color: var(--muted); font-size: .9rem; }
 .grants li p:first-child { font-weight: 600; }
 .publication-list sup { color: var(--blue); }
 
@@ -53,6 +54,7 @@
     flex-wrap: wrap;
 }
 .profile-title { max-width: none; }
+.profile-bio { max-width: 62ch; margin: 0 0 1rem; font-size: 1rem; line-height: 1.65; }
 @container (max-width: 41rem) {
     .profile-header > div:first-child { flex-basis: 100%; }
     .profile-title { font-size: clamp(.75rem, 3.8cqi, 1.0625rem); }
@@ -72,10 +74,101 @@
     .main-column { padding-inline: 12px; }
     .profile-title { font-family: var(--interface); letter-spacing: -.012em; }
 }
+/* Lakeside terrace artwork for the homepage. */
+.home-intro {
+    width: calc(100% - 40px);
+    max-width: 1248px;
+    margin: 20px auto 0;
+    position: relative;
+    border: 1px solid #d9d0b8;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fbf5e6;
+}
+.home-intro .header-actions { position: absolute; top: 14px; right: 18px; z-index: 1; }
+.home-intro .lang-switch { background: #fffaf0; border-color: #baac88; }
+.home-intro .profile-header {
+    display: grid;
+    grid-template-columns: minmax(26rem, 1.15fr) minmax(0, 1fr);
+    gap: clamp(20px, 3vw, 44px);
+    align-items: center;
+    padding: clamp(36px, 4vw, 64px) clamp(24px, 4vw, 60px);
+    border: 0;
+    background: linear-gradient(90deg, #fafaf5fa 8%, #fafaf5f0 45%, #f8f8f1a8 54%, transparent 70%),
+                url("index/images/home-summer-valley.jpg") center / cover;
+}
+.home-intro h1 { font-size: clamp(2.5rem, 4.8vw, 4.25rem); line-height: 1.08; }
+.home-intro .eyebrow { font-family: var(--interface); color: #60542b; margin-bottom: .6rem; }
+.home-intro .profile-bio { color: #33362f; }
+.profile-identity { display: flex; align-items: center; gap: clamp(14px, 2vw, 26px); margin-bottom: 16px; }
+.profile-identity > div:last-child { flex: 1; min-width: 0; container-type: inline-size; }
+.profile-identity h1 { margin-bottom: 0; font-size: min(4.25rem, 12cqi); white-space: nowrap; }
+.home-intro .profile-photo-container {
+    position: relative; flex: none; width: clamp(94px, 10vw, 136px); height: auto;
+    aspect-ratio: 1.15; border-radius: 8px;
+}
+.home-intro .profile-photo {
+    position: absolute; width: 210%; max-width: none; height: auto;
+    left: -48%; top: -11%; display: block;
+}
+.home-intro .section-nav {
+    padding: .85rem clamp(20px, 4vw, 60px); gap: .25rem 1.65rem;
+    background: #f6f0da; border: 0; border-top: 1px solid #d9d0b8;
+}
+.home-intro .section-nav a { color: #45422f; font-size: 1rem; }
+.container { margin-top: 22px; }
+.left-column a.topic-link {
+    border-inline-start: 2px solid var(--topic-heading, #526358);
+    border-radius: 0; padding-block: .42rem; margin-block: .38rem;
+}
+@media (max-width: 760px) {
+    .home-intro { width: calc(100% - 32px); margin-top: 10px; }
+    .home-intro .profile-header {
+        display: block;
+        padding: 154px 22px 24px;
+        background: linear-gradient(to bottom, transparent 100px, #fafaf5 183px),
+                    url("index/images/home-summer-valley.jpg") right top / auto 200px no-repeat, #fafaf5;
+    }
+    .home-intro .profile-photo-container { width: clamp(80px, 18vw, 108px); }
+    .profile-identity h1 { font-size: min(2.5rem, 12cqi); }
+    .home-intro .section-nav { gap: .35rem 1.15rem; }
+}
+@media (max-width: 400px) {
+    .home-intro { width: calc(100% - 12px); }
+    .home-intro .profile-header { padding-inline: 12px; }
+}
+@media print {
+    .home-intro { width: 100%; margin: 0; border: 0; }
+    .home-intro .header-actions { display: none; }
+    .home-intro .profile-header { display: flex; padding: 0; background: white; }
+    .home-intro .profile-photo-container { width: 120px; }
+}
 </style>
 </head>
 <body>
-    <header class="site-header" id="top"><a class="brand" href="#top">Zheng Xu</a><div class="header-actions"><button id="langButton" class="lang-switch" type="button" aria-label="Switch language / 切换语言">中文</button></div></header>
+    <header class="home-intro" id="top">
+<div class="header-actions"><button id="langButton" class="lang-switch" type="button" aria-label="Switch language / 切换语言">中文</button></div>
+   <div class="profile-header">
+    <div>
+        <div class="profile-info">
+            <div class="profile-identity">
+                <div class="profile-photo-container">
+                    <img class="profile-photo" src="index/zhengxu.jpg" alt="Zheng Xu">
+                </div>
+                <div>
+                    <p class="eyebrow" data-lang="research-focus">Isogeny-Based Post-Quantum Cryptography</p>
+                    <h1 data-lang="name">Zheng Xu (徐铮)</h1>
+                </div>
+            </div>
+            <p class="profile-title" data-lang="title">Associate Research Professor, Hefei National Laboratory</p>
+            <p class="profile-bio" data-lang="research-bio">My research is in computational number theory and post-quantum cryptography, with a focus on computational problems involving isogeny graphs and endomorphism rings of supersingular elliptic curves and abelian varieties. I study how these structures can be used in digital signatures and key exchange, particularly in the SQIsign family of signatures and the module-based isogeny key exchange MIKE.</p>
+            <p class="profile-contact" data-lang="email">xuzheng1@mail.ustc.edu.cn</p>
+            <p class="profile-contact" data-lang="address">Hefei National Laboratory, 5099 Wangjiang West Road, Shushan District, Hefei, Anhui, China</p>
+        </div>
+    </div>
+</div>
+<nav class="section-nav" aria-label="Page sections"><a href="#experience" data-lang="work-experience">Experience</a><a href="#education" data-lang="education">Education</a><a href="#research" data-lang="research">Research Interests</a><a href="#publications" data-lang="nav-publications">Publications</a><a href="#talks" data-lang="talks">Talks</a><a href="#patents" data-lang="patents">Patents</a><a href="#projects" data-lang="all-projects">Projects</a></nav>
+    </header>
     
     <div class="container">
         <div class="left-column">
@@ -158,24 +251,7 @@
         </div>
         
         <div class="main-column"> 
-   <div class="profile-header">
-    <div>
-        <div class="profile-info"><p class="eyebrow" data-lang="research-focus">Isogeny-Based Post-Quantum Cryptography</p>
-            <h1 data-lang="name">Zheng Xu (徐铮)</h1>
-            <p class="profile-title" data-lang="title">Associate Research Professor, Hefei National Laboratory</p>
-            <p class="profile-contact" data-lang="email">xuzheng1@mail.ustc.edu.cn</p>
-            <p class="profile-contact" data-lang="address">Hefei National Laboratory, 5099 Wangjiang West Road, Shushan District, Hefei, Anhui, China</p>
-        </div>
-    </div>
-    <!-- 拉宽照片容器 -->
-    <div class="profile-photo-container">
-        <img class="profile-photo" src="index/zhengxu.jpg" alt="Zheng Xu" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="photo-placeholder" style="display: none; flex-direction: column; align-items: center; justify-content: center; color: #666; font-size: 14px;">
-            照片位置<br>(200×250px)
-        </div>
-    </div>
-</div>
-<nav class="section-nav" aria-label="Page sections"><a href="#experience" data-lang="work-experience">Experience</a><a href="#education" data-lang="education">Education</a><a href="#research" data-lang="research">Research Interests</a><a href="#publications" data-lang="nav-publications">Publications</a><a href="#patents" data-lang="patents">Patents</a><a href="#projects" data-lang="projects">Projects as Principal Investigator</a></nav><h2 id="experience" data-lang="work-experience">Experience</h2>
+<h2 id="experience" data-lang="work-experience">Experience</h2>
             <ul class="timeline">
                 <li>
                     <p data-lang="date1">Oct 2024-Present</p>
@@ -211,7 +287,7 @@
             <h2 id="research" data-lang="research">Research Interests</h2>
             <ul class="research-list">
                 <li data-lang="research1-title">Computational Number Theory</li>
-                <p data-lang="research1-content1">1. Structure of isogeny graphs, computating isogeny and endomorphism ring problems</p>
+                <p data-lang="research1-content1">1. Structure of isogeny graphs and algorithms for computing isogenies and endomorphism rings</p>
                 <p data-lang="research1-content2">2. Generalizations to abelian varieties over finite fields</p>
                 <li data-lang="research2-title">Cryptography</li>
                 <p data-lang="research2-content1">1. Isogeny-based post-quantum signatures: Design, optimization and analysis of SQIsign series signatures</p>
@@ -244,7 +320,7 @@
             </ul>
             
             <h3 data-lang="preprint">Preprints</h3>
-            <ul class="publication-list"><li><p data-lang="preprint-frobenius">Yi Ouyang, Wei Wei, Zheng Xu<sup>*</sup>. <a href="https://eprint.iacr.org/2026/2677">Smoothness of Shortest Isogenies to Frobenius Conjugatess</a>. Cryptology ePrint Archive, 2026/2677.</p></li></ul> 
+            <ul class="publication-list"><li><p data-lang="preprint-frobenius">Yi Ouyang, Wei Wei, Zheng Xu<sup>*</sup>. <a href="https://eprint.iacr.org/2026/2677">Smoothness of Shortest Isogenies to Frobenius Conjugates</a>. Cryptology ePrint Archive, 2026/2677.</p></li></ul> 
 
             <h3 data-lang="thesis">Ph.D. Thesis</h3>
             <ul>
@@ -253,10 +329,31 @@
                 </li>
             </ul>
             
+            <h2 id="talks" data-lang="talks">Talks</h2>
+            <h3 data-lang="conference-talks">Conference Talks</h3>
+            <ul class="talk-list">
+                <li><p>MIKE: A New Isogeny Based NIKE</p>
+                    <p><time datetime="2026-11">2026-11</time> · <span data-lang="talk-conf-2026-11-venue">2026 Annual Conference on the Mathematical Theory of Cryptography, Chinese Association for Cryptologic Research, Shanghai</span></p></li>
+                <li><p>Improving Two-Dimensional Isogeny Computation by Leveraging One-Dimensional Isogenies</p>
+                    <p><time datetime="2026-09">2026-09</time> · <span data-lang="talk-conf-2026-09-venue">KU Leuven Isogeny Days 7, Leuven, Belgium</span></p></li>
+                <li><p>SQIsign2D<sup>2</sup>: New SQIsign2D Variant by Leveraging Power Smooth Isogenies in Dimension One</p>
+                    <p><time datetime="2025-12">2025-12</time> · <span data-lang="talk-conf-2025-12-venue">ASIACRYPT 2025, Melbourne, Australia</span></p></li>
+                <li><p>SQIsign2D<sup>2</sup>: New SQIsign2D Variant by Leveraging Power Smooth Isogenies in Dimension One</p>
+                    <p><time datetime="2025-11">2025-11</time> · <span data-lang="talk-conf-2025-11-venue">18th Annual Conference of the Chinese Association for Cryptologic Research, Tianjin</span></p></li>
+                <li><p>SQIsign2D<sup>2</sup>: New SQIsign2D Variant by Leveraging Power Smooth Isogenies in Dimension One</p>
+                    <p><time datetime="2025-10">2025-10</time> · <span data-lang="talk-conf-2025-10-venue">2025 Annual Conference on the Mathematical Theory of Cryptography, Chinese Association for Cryptologic Research, Suzhou</span></p></li>
+                <li><p>Isogeny-Based Cryptography: From One Dimension to High Dimension</p>
+                    <p><time datetime="2025-07">2025-07</time> · <span data-lang="talk-conf-2025-07-venue">2025 Workshop on Error-Correcting Codes and Post-Quantum Public-Key Cryptography, Changsha</span></p></li>
+                <li><p>Neighborhood of Two Vertices in the Isogeny Graph of Principally Polarized Superspecial Abelian Surfaces</p>
+                    <p><time datetime="2024-12">2024-12</time> · <span data-lang="talk-conf-2024-12-venue">11th International Workshop on Finite Fields and Their Applications, Zhangzhou</span></p></li>
+                <li><p>Isogeny graph of elliptic curves and abelian varieties</p>
+                    <p><time datetime="2021-04">2021-04</time> · <span data-lang="talk-conf-2021-04-venue">First National Doctoral Forum on Number Theory and Algebraic Geometry, “When Number Theory Meets Algebraic Geometry”, Hefei</span></p></li>
+            </ul>
             <h2 id="patents" data-lang="patents">Patents</h2>
             <ul><li><p data-lang="patent-signature">Zheng Xu, Kaizhan Lin, Yi Ouyang. <strong>Isogeny-based signature method, apparatus, device and medium.</strong> Chinese patent ZL202511947818.9.</p></li>
                 <li><p data-lang="patent-translation">Zheng Xu, Keteng Huang, Yi Ouyang, Guizhen Zhu. <strong>Method, apparatus, device and storage medium for ideal-to-isogeny translation.</strong> Patent application pending.</p></li></ul>
-            <h2 id="projects" data-lang="projects">Projects as Principal Investigator</h2>
+            <h2 id="projects" data-lang="all-projects">Projects</h2>
+            <h3 data-lang="projects">Projects as Principal Investigator</h3>
             <ul class="grants">
 <li><p data-lang="project1-name">Mathematical Theory of Isogeny-Based Post-Quantum Cryptography</p>
 <p data-lang="project1-time">2026–2028 · National Natural Science Foundation of China, Young Scientists Fund (Category C)</p></li>
@@ -266,7 +363,7 @@
 <p data-lang="pi3-time">2027–2028 · Open Research Project, Beijing Key Laboratory of Cryptography Resistant to Quantum Computing</p></li>
 </ul>
             
-            <h2 id="research-projects" data-lang="projectss">Research Projects</h2>
+            <h3 id="research-projects" data-lang="projectss">Projects as Participant</h3>
             <ul>
                 <li>
                     <p data-lang="projects1-name">Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography (Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province)</p>
@@ -295,6 +392,7 @@
         "email": "xuzheng1@mail.ustc.edu.cn",
         "github": "Github",
         "title": "Associate Research Professor, Hefei National Laboratory",
+        "research-bio": "My research is in computational number theory and post-quantum cryptography, with a focus on computational problems involving isogeny graphs and endomorphism rings of supersingular elliptic curves and abelian varieties. I study how these structures can be used in digital signatures and key exchange, particularly in the SQIsign family of signatures and the module-based isogeny key exchange MIKE.",
         "address": "Hefei National Laboratory, 5099 Wangjiang West Road, Shushan District, Hefei, Anhui, China",
         "scholar": "Google Scholar",
         "hard": "Isogeny Hard Problems",
@@ -320,7 +418,7 @@
         "edu2-degree": "B.S. in Mathematics",
         "research": "Research Interests",
         "research1-title": "Computational Number Theory",
-        "research1-content1": "1. Structure of isogeny graphs, computating isogeny and endomorphism ring problems",
+        "research1-content1": "1. Structure of isogeny graphs and algorithms for computing isogenies and endomorphism rings",
         "research1-content2": "2. Generalizations to abelian varieties over finite fields",
         "research2-title": "Cryptography",
         "research2-content1": "1. Isogeny-based post-quantum signatures: Design, optimization and analysis of SQIsign series signatures",
@@ -338,10 +436,21 @@
         "preprint": "Preprints",
         "thesis": "Ph.D. Thesis",
         "thesis1": "<a href=\"index/thesis.pdf\">Isogeny Graph And Its Application In Cryptography</a>",
+        "all-projects": "Projects",
+        "talks": "Talks",
+        "conference-talks": "Conference Talks",
+        "talk-conf-2026-11-venue": "2026 Annual Conference on the Mathematical Theory of Cryptography, Chinese Association for Cryptologic Research, Shanghai",
+        "talk-conf-2026-09-venue": "KU Leuven Isogeny Days 7, Leuven, Belgium",
+        "talk-conf-2025-12-venue": "ASIACRYPT 2025, Melbourne, Australia",
+        "talk-conf-2025-11-venue": "18th Annual Conference of the Chinese Association for Cryptologic Research, Tianjin",
+        "talk-conf-2025-10-venue": "2025 Annual Conference on the Mathematical Theory of Cryptography, Chinese Association for Cryptologic Research, Suzhou",
+        "talk-conf-2025-07-venue": "2025 Workshop on Error-Correcting Codes and Post-Quantum Public-Key Cryptography, Changsha",
+        "talk-conf-2024-12-venue": "11th International Workshop on Finite Fields and Their Applications, Zhangzhou",
+        "talk-conf-2021-04-venue": "First National Doctoral Forum on Number Theory and Algebraic Geometry, “When Number Theory Meets Algebraic Geometry”, Hefei",
         "projects": "Projects as Principal Investigator",
         "project1-name": "Mathematical Theory of Isogeny-Based Post-Quantum Cryptography",
         "project1-time": "2026–2028 · National Natural Science Foundation of China, Young Scientists Fund (Category C)",
-        "projectss": "Research Projects",
+        "projectss": "Projects as Participant",
         "projects1-name": "Project Title: Research on Mathematical Theories and Algorithms Related to Post-Quantum Cryptography (Guiding Project of Major Projects on Quantum Communication and Quantum Computers in Anhui Province)",
         "projects1-time": "Project Duration: 2018 - 2022",
         "projects2-name": "Project Title: Theoretical and Applied Research on Quantum Algorithms and Post-Quantum Cryptographic Algorithms (Major Project on Quantum Communication and Quantum Computers)",
@@ -350,7 +459,7 @@
         "corresponding": "* Corresponding author",
         "patents": "Patents",
         "pub7": "Xiwen Chen, Jinrong Chen, Zheng Xu, Zijian Zhou<sup>*</sup>. <a lang=\"zh-CN\" href=\"https://opaj.napstic.cn/periodicalArticle/0120260601072445\">SI-CP-ABE：一类基于同源的密文策略属性基加密方案</a>. Chinese Journal of Network and Information Security, 12(2), 65–82 (2026). In Chinese.",
-        "preprint-frobenius": "Yi Ouyang, Wei Wei, Zheng Xu<sup>*</sup>. <a href=\"https://eprint.iacr.org/2026/2677\">Smoothness of Shortest Isogenies to Frobenius Conjugatess</a>. Cryptology ePrint Archive, 2026/2677.",
+        "preprint-frobenius": "Yi Ouyang, Wei Wei, Zheng Xu<sup>*</sup>. <a href=\"https://eprint.iacr.org/2026/2677\">Smoothness of Shortest Isogenies to Frobenius Conjugates</a>. Cryptology ePrint Archive, 2026/2677.",
         "patent-signature": "Zheng Xu, Kaizhan Lin, Yi Ouyang. <strong>Isogeny-based signature method, apparatus, device and medium.</strong> Chinese patent ZL202511947818.9.",
         "patent-translation": "Zheng Xu, Keteng Huang, Yi Ouyang, Guizhen Zhu. <strong>Method, apparatus, device and storage medium for ideal-to-isogeny translation.</strong> Patent application pending.",
         "pi2-name": "Mathematical Theory and Design Principles of Isogeny-Based Cryptography",
@@ -362,6 +471,7 @@
         "nav-publications": "论文",
         "name": "徐铮",
         "title": "合肥国家实验室 · 副高级研究员",
+        "research-bio": "我的研究方向是计算数论与后量子密码学，主要关注超奇异椭圆曲线和阿贝尔簇的同源图与自同态环中的计算问题。我也研究这些数学问题在数字签名和密钥交换中的应用，特别是 SQIsign 系列签名和基于模作用的 MIKE 密钥交换。",
         "address": "安徽省合肥市蜀山区望江西路 5099 号，合肥国家实验室",
         "location": "安徽",
         "email": "xuzheng1@mail.ustc.edu.cn",
@@ -409,6 +519,17 @@
         "preprint": "预印本",
         "thesis": "博士学位论文",
         "thesis1": "<a href=\"index/thesis.pdf\">同源图及其在密码学上的应用 </a>",
+        "all-projects": "项目",
+        "talks": "报告",
+        "conference-talks": "会议报告",
+        "talk-conf-2026-11-venue": "中国密码学会 2026 年密码数学理论学术年会，上海",
+        "talk-conf-2026-09-venue": "KU Leuven Isogeny Days 7，比利时鲁汶",
+        "talk-conf-2025-12-venue": "ASIACRYPT 2025，澳大利亚墨尔本",
+        "talk-conf-2025-11-venue": "第十八届中国密码学会年会，天津",
+        "talk-conf-2025-10-venue": "中国密码学会 2025 年密码数学理论学术年会，苏州",
+        "talk-conf-2025-07-venue": "2025 纠错编码与后量子公钥密码研讨会，长沙",
+        "talk-conf-2024-12-venue": "第十一届有限域及其应用国际研讨会，漳州",
+        "talk-conf-2021-04-venue": "“当数论遇见代数几何”数论与代数几何第一届全国博士生论坛，合肥",
         "projects": "主持项目",
         "project1-name": "基于同源的后量子密码的数学理论",
         "project1-time": "2026–2028 · 国家自然科学基金青年科学基金项目（C 类）",
@@ -420,10 +541,10 @@
         "research-focus": "基于同源的后量子密码",
         "corresponding": "* 表示通讯作者",
         "patents": "专利",
-        "pub7": "陈淅文，陈锦榕，徐铮，周子健<sup>*</sup>。<a href=\"https://opaj.napstic.cn/periodicalArticle/0120260601072445\">SI-CP-ABE：一类基于同源的密文策略属性基加密方案</a>。《网络与信息安全学报》，2026，12(2)，65–82。",
-        "preprint-frobenius": "欧阳毅，魏薇，徐铮<sup>*</sup>。<a href=\"https://eprint.iacr.org/2026/2677\">Smoothness of Shortest Isogenies to Frobenius Conjugatess</a>。Cryptology ePrint Archive，2026/2677。",
-        "patent-signature": "徐铮，林楷展，欧阳毅。<strong>基于同源的签名方法、装置、设备、介质</strong>。授权专利号 ZL202511947818.9。",
-        "patent-translation": "徐铮，黄可腾，欧阳毅，朱桂桢。<strong>一种理想到同源的转换方法、装置、设备及存储介质</strong>。申请中。",
+        "pub7": "陈淅文，陈锦榕，徐铮，周子健<sup>*</sup>，<a href=\"https://opaj.napstic.cn/periodicalArticle/0120260601072445\">SI-CP-ABE：一类基于同源的密文策略属性基加密方案</a>。《网络与信息安全学报》，2026，12(2)，65–82。",
+        "preprint-frobenius": "欧阳毅，魏薇，徐铮<sup>*</sup>，<a href=\"https://eprint.iacr.org/2026/2677\">Smoothness of Shortest Isogenies to Frobenius Conjugates</a>。Cryptology ePrint Archive，2026/2677。",
+        "patent-signature": "徐铮，林楷展，欧阳毅，<strong>基于同源的签名方法、装置、设备、介质</strong>。授权专利号 ZL202511947818.9。",
+        "patent-translation": "徐铮，黄可腾，欧阳毅，朱桂桢，<strong>一种理想到同源的转换方法、装置、设备及存储介质</strong>。申请中。",
         "pi2-name": "同源密码的数学理论与设计机理研究",
         "pi2-time": "2026–2029 · 国家密码科学基金面上项目",
         "pi3-name": "基于同源的后量子密码设计与分析",
