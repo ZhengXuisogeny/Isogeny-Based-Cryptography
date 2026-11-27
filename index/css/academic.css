@@ -13,6 +13,8 @@
     --shade: linear-gradient(90deg, #0f3447b8, #16384a68 63%, #142e3ea1);
     --crop: 44%;
     --footer-crop: 82%;
+    --watermark-opacity: .22;
+    --mobile-watermark-opacity: .14;
 }
 :root[data-landscape="alpine"] {
     --canvas: #f6f9fc;
@@ -42,6 +44,8 @@
     --footer-crop: 60%;
 }
 :root[data-landscape="dunes"] {
+    --watermark-opacity: .32;
+    --mobile-watermark-opacity: .21;
     --canvas: #fcf8f4;
     --heading: #794327;
     --link: #83461f;
@@ -67,6 +71,32 @@ body {
     color: var(--ink);
     font: 1.075rem/1.6 var(--font);
     overflow-wrap: break-word;
+}
+/* Let the banner landscape reappear softly along the lower page margins. */
+@media screen {
+    :root[data-landscape] { background-color: var(--canvas); }
+    :root[data-landscape] body { isolation: isolate; background: transparent; }
+    :root[data-landscape] body::before {
+        content: "";
+        position: fixed;
+        inset: auto 0 0;
+        height: clamp(16rem, 34vw, 58vh);
+        z-index: -1;
+        pointer-events: none;
+        background: var(--landscape) center var(--footer-crop) / cover no-repeat;
+        opacity: var(--watermark-opacity);
+        mask-image:
+            linear-gradient(to bottom, transparent, #000 60%),
+            linear-gradient(to right, #000 3%, #0006 27%, #0006 73%, #000 97%);
+        mask-composite: intersect;
+    }
+}
+@media screen and (max-width: 700px) {
+    :root[data-landscape] body::before {
+        height: min(38vw, 12rem);
+        opacity: var(--mobile-watermark-opacity);
+        mask-image: linear-gradient(to bottom, transparent, #000);
+    }
 }
 a[href] { color: var(--link); text-decoration: none; }
 a[href]:hover { text-decoration: underline; text-underline-offset: .15em; }

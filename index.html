@@ -73,7 +73,27 @@
     .main-column { padding-inline: 12px; }
     .profile-title { font-family: var(--interface); letter-spacing: -.012em; }
 }
-/* Lakeside terrace artwork for the homepage. */
+/* Carry the valley from the masthead into the lower page margins. */
+:root { --home-valley: url("index/images/home-summer-valley.jpg"); }
+@media screen {
+    html { background-color: #fbfaf5; }
+    body { isolation: isolate; background: transparent; }
+    body::before {
+        content: "";
+        position: fixed;
+        inset: auto 0 0;
+        height: clamp(15rem, 32vw, 52vh);
+        z-index: -1;
+        pointer-events: none;
+        background: var(--home-valley) center 75% / cover no-repeat;
+        opacity: .30;
+        mask-image: linear-gradient(to bottom, transparent, #000 74%);
+    }
+    .main-column { background-color: rgb(255 255 255 / 76%); }
+}
+@media screen and (max-width: 760px) {
+    body::before { height: min(44vw, 13rem); opacity: .21; }
+}
 .home-intro {
     width: calc(100% - 40px);
     max-width: 1248px;
@@ -94,7 +114,7 @@
     padding: clamp(36px, 4vw, 64px) clamp(24px, 4vw, 60px);
     border: 0;
     background: linear-gradient(90deg, #fafaf5fa 8%, #fafaf5f0 45%, #f8f8f1a8 54%, transparent 70%),
-                url("index/images/home-summer-valley.jpg") center / cover;
+                var(--home-valley) center / cover;
 }
 .home-intro h1 { font-size: clamp(2.5rem, 4.8vw, 4.25rem); line-height: 1.08; }
 .home-intro .eyebrow { font-family: var(--interface); color: #60542b; margin-bottom: .6rem; }
@@ -127,7 +147,7 @@
         display: block;
         padding: 154px 22px 24px;
         background: linear-gradient(to bottom, transparent 100px, #fafaf5 183px),
-                    url("index/images/home-summer-valley.jpg") right top / auto 200px no-repeat, #fafaf5;
+                    var(--home-valley) right top / auto 200px no-repeat, #fafaf5;
     }
     .home-intro .profile-photo-container { width: clamp(80px, 18vw, 108px); }
     .profile-identity h1 { font-size: min(2.5rem, 12cqi); }
